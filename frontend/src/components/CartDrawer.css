@@ -2110,3 +2110,161 @@
   line-height: 1.4;
   text-align: center;
 }
+
+/* ============================================================
+   MOBILE & TABLET RESPONSIVE — Cart Drawer
+   ============================================================ */
+
+/* Tablet (768px–1024px): slightly narrower drawer */
+@media (max-width: 1024px) {
+  .cart-drawer {
+    max-width: 420px;
+  }
+}
+
+/* Small mobile (max 480px): full-width slide-up drawer */
+@media (max-width: 480px) {
+  .cart-drawer {
+    max-width: 100%;
+    width: 100%;
+    top: auto;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 92dvh;
+    max-height: 92dvh;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.5);
+  }
+
+  .cart-header {
+    padding: 16px 18px;
+  }
+
+  .cart-title-wrapper h3,
+  .cart-header-title h3 {
+    font-size: 16px;
+  }
+
+  .cart-body {
+    padding: 16px 14px;
+  }
+
+  .cart-item {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .cart-item-image {
+    width: 70px;
+    height: 90px;
+    flex: 0 0 70px;
+  }
+
+  .cart-item-name {
+    font-size: 13px;
+  }
+
+  .cart-item-size,
+  .cart-item-meta {
+    font-size: 11px;
+  }
+
+  /* Footer checkout section */
+  .cart-footer,
+  .checkout-section,
+  .cart-summary-section {
+    padding: 14px 14px;
+  }
+
+  .checkout-btn,
+  .razorpay-pay-btn,
+  .place-order-btn {
+    padding: 14px 16px;
+    font-size: 13.5px;
+    min-height: 50px;
+  }
+
+  /* Address / form fields */
+  .address-form,
+  .checkout-form {
+    padding: 14px;
+  }
+
+  .form-input,
+  .form-select,
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  select,
+  textarea {
+    font-size: 16px !important; /* prevent iOS zoom */
+    padding: 12px 14px;
+  }
+
+  /* Order summary rows */
+  .summary-row {
+    font-size: 13px;
+  }
+
+  .total-row {
+    font-size: 15px;
+  }
+
+  /* Payment steps */
+  .checkout-steps,
+  .step-indicators {
+    gap: 8px;
+  }
+
+  .step-label {
+    font-size: 10px;
+  }
+
+  .step-dot {
+    width: 28px;
+    height: 28px;
+    font-size: 11px;
+  }
+
+  .coupon-row,
+  .coupon-input-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .coupon-input-row input {
+    width: 100%;
+    font-size: 16px !important;
+  }
+
+  .apply-coupon-btn,
+  .copy-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Extra small (iPhone SE, 360–374px) */
+@media (max-width: 374px) {
+  .cart-drawer {
+    height: 96dvh;
+    max-height: 96dvh;
+  }
+
+  .cart-item-image {
+    width: 60px;
+    height: 78px;
+    flex: 0 0 60px;
+  }
+
+  .cart-item-name {
+    font-size: 12px;
+  }
+
+  .checkout-btn,
+  .razorpay-pay-btn,
+  .place-order-btn {
+    font-size: 12.5px;
+  }
+}

@@ -1080,6 +1080,7 @@
 /* --------------------------------------------------------------------------
    Responsive Media Queries
    -------------------------------------------------------------------------- */
+/* Tablet 768–1024px */
 @media (max-width: 1024px) {
   .collection-layout-grid {
     grid-template-columns: 1fr;
@@ -1094,7 +1095,20 @@
   }
 
   .collection-container {
-    padding: 0 20px;
+    padding: 0 16px;
+  }
+
+  .luxury-product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(min(230px, 44vw), 1fr));
+    gap: 14px;
+  }
+
+  .collection-main-title {
+    font-size: clamp(1.6rem, 4vw, 2.1rem);
+  }
+
+  .collection-search-bar {
+    width: 240px;
   }
 }
 
@@ -1116,7 +1130,11 @@
 
   .luxury-product-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 8px;
+  }
+
+  .collection-container {
+    padding: 0 10px;
   }
 
   .product-details-box {
@@ -1176,6 +1194,33 @@
   }
 }
 
+/* XS — iPhone SE & very small phones */
+@media (max-width: 374px) {
+  .luxury-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+
+  .product-item-title {
+    font-size: 12px;
+  }
+
+  .final-price {
+    font-size: 13.5px;
+  }
+
+  .collection-container {
+    padding: 0 8px;
+  }
+
+  .mobile-filter-trigger-btn,
+  .mobile-sort-select {
+    font-size: 12px;
+    padding: 10px 12px;
+  }
+}
+
+/* 360px and below — single column */
 @media (max-width: 360px) {
   .luxury-product-grid {
     grid-template-columns: 1fr;

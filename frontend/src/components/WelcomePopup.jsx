@@ -26,30 +26,45 @@ const WelcomePopup = ({ onCartOpen, onProductClick }) => {
   if (!isVisible) return null;
 
   const handleOrderNow = () => {
-    addToCart(product, "Free Size", 1);
+    addToCart(product, product.sizes?.[0] || 'Free Size', 1);
     setIsVisible(false);
     if (onCartOpen) onCartOpen();
   };
 
+  const handleViewProduct = () => {
+    setIsVisible(false);
+    if (onProductClick) onProductClick(product);
+  };
+
   return (
-    <div className="welcome-popup-overlay">
-      <div className="welcome-popup-content">
+    <div className="welcome-popup-overlay" onClick={() => setIsVisible(false)}>
+      <div className="welcome-popup-content" onClick={e => e.stopPropagation()}>
         <button className="welcome-close-btn" onClick={() => setIsVisible(false)}>
-          <X size={24} />
+          <X size={20} />
         </button>
         <div className="welcome-popup-split">
-          <div className="welcome-image-side">
+          <div className="welcome-image-side" onClick={handleViewProduct}>
             <img src={product.image} alt={product.name} />
-            <span className="welcome-tag">{product.tag}</span>
+            <span className="welcome-tag">{product.tag || 'New Arrival'}</span>
           </div>
           <div className="welcome-text-side">
-            <h2>Trending Now</h2>
-            <p className="welcome-subtitle">Elevate your festive wardrobe with our most coveted piece.</p>
+            <p className="welcome-eyebrow">✨ Trending Now</p>
             <h3 className="welcome-product-name">{product.name}</h3>
-            <p className="welcome-price">₹{product.price.toLocaleString()}</p>
-            <button className="welcome-order-btn" onClick={handleOrderNow}>
-              Order Now
-            </button>
+            <p className="welcome-subtitle">{product.fabric || 'Handcrafted luxury piece'}</p>
+            <div className="welcome-price-row">
+              <span className="welcome-price">₹{(product.sellingPrice || product.price).toLocaleString()}</span>
+              {product.originalPrice && product.originalPrice !== product.sellingPrice && (
+                <span className="welcome-original-price">₹{product.originalPrice.toLocaleString()}</span>
+              )}
+            </div>
+            <div className="welcome-actions">
+              <button className="welcome-order-btn" onClick={handleOrderNow}>
+                Add to Cart
+              </button>
+              <button className="welcome-view-btn" onClick={handleViewProduct}>
+                View Details
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -58,3 +73,4 @@ const WelcomePopup = ({ onCartOpen, onProductClick }) => {
 };
 
 export default WelcomePopup;
+
