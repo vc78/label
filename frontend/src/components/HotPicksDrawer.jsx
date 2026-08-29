@@ -1,21 +1,25 @@
 import React from 'react';
 import { X, ShoppingBag } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { products } from '../data/products';
 import './HotPicksDrawer.css';
 
-const HotPicksDrawer = ({ isOpen, onClose, onCartOpen }) => {
+const HotPicksDrawer = ({ isOpen, onClose, onCartOpen, onProductClick }) => {
   const { addToCart } = useCart();
 
-  const hotPicks = [
-    { id: 'hot-1', name: 'Silk Embroidered Kurta', price: 4500, sellingPrice: 4500, tag: 'Hot Pick', image: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=400' },
-    { id: 'hot-2', name: 'Designer Lehenga Set', price: 12000, sellingPrice: 12000, tag: 'Limited Stock', image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=400' },
-    { id: 'hot-3', name: 'Chanderi Saree', price: 8500, sellingPrice: 8500, tag: 'New Arrival', image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400' }
-  ];
+  // Curate real hot picks from catalog
+  const hotPicks = products.filter(p => p.tag === 'Bestseller' || p.tag === 'New' || p.isNew).slice(0, 4);
 
-  const handleAddToCart = (product) => {
-    addToCart(product, "Free Size", 1);
+  const handleAddToCart = (product, e) => {
+    e.stopPropagation();
+    addToCart(product, product.sizes?.[0] || "Free Size", 1);
     onClose();
     if (onCartOpen) onCartOpen();
+  };
+
+  const handleCardClick = (product) => {
+    onClose();
+    if (onProductClick) onProductClick(product);
   };
 
   return (
@@ -28,15 +32,15 @@ const HotPicksDrawer = ({ isOpen, onClose, onCartOpen }) => {
         </div>
         <div className="hot-picks-content">
           {hotPicks.map(product => (
-            <div key={product.id} className="hot-pick-card">
+            <div key={product.id} className="hot-pick-card" onClick={() => handleCardClick(product)}>
               <div className="hot-pick-image">
                 <img src={product.image} alt={product.name} />
-                <span className="hot-pick-tag">{product.tag}</span>
+                <span className="hot-pick-tag">{product.tag || 'Bestseller'}</span>
               </div>
               <div className="hot-pick-info">
                 <h3>{product.name}</h3>
-                <p>₹{product.price.toLocaleString()}</p>
-                <button className="hot-pick-add-btn" onClick={() => handleAddToCart(product)}>
+                <p>₹{(product.sellingPrice || product.price).toLocaleString()}</p>
+                <button className="hot-pick-add-btn" onClick={(e) => handleAddToCart(product, e)}>
                   <ShoppingBag size={16} /> Add to Cart
                 </button>
               </div>

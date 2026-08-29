@@ -161,11 +161,15 @@ function App() {
               <AiStylistButton onClick={() => setIsAiStylistOpen(true)} />
 
               {/* Welcome Popup & Hot Picks Drawer */}
-              <WelcomePopup onCartOpen={() => setIsCartOpen(true)} />
+              <WelcomePopup
+                onCartOpen={() => setIsCartOpen(true)}
+                onProductClick={navigateToProduct}
+              />
               <HotPicksDrawer
                 isOpen={isHotPicksOpen}
                 onClose={() => setIsHotPicksOpen(false)}
                 onCartOpen={() => setIsCartOpen(true)}
+                onProductClick={navigateToProduct}
               />
             </div>
           </ToastProvider>

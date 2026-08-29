@@ -1,20 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { X } from 'lucide-react';
+import { X, Sparkles } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { products } from '../data/products';
 import './WelcomePopup.css';
 
-const WelcomePopup = ({ onCartOpen }) => {
+const WelcomePopup = ({ onCartOpen, onProductClick }) => {
   const [isVisible, setIsVisible] = useState(false);
   const { addToCart } = useCart();
 
-  const product = {
-    id: 'lehenga-mock-1',
-    name: 'Designer Lehenga Set',
-    price: 12000,
-    sellingPrice: 12000,
-    tag: 'Limited Stock',
-    image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=600'
-  };
+  // Real bestseller product from catalog
+  const product = products.find(p => p.id === 'lehenga-1') || products[0];
 
   useEffect(() => {
     // Only show once per session
