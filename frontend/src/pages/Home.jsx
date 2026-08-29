@@ -177,22 +177,49 @@ const Home = ({ onAuthOpen, onProfileOpen, onNavigateToCollection, onProductClic
       </section>
 
       {/* SECTION 1.5: TRUST STRIP & BOOKING MODAL */}
-      <div className="trust-strip" id="book-call">
-        <div className="trust-item">
-          <Globe size={24} />
-          <span>Worldwide Shipping</span>
+      <div className="trust-strip-wrapper">
+        <div className="trust-strip" id="book-call">
+          <div className="trust-item">
+            <div className="trust-icon-badge">
+              <Globe size={20} />
+            </div>
+            <div className="trust-text-group">
+              <span className="trust-title">Worldwide Shipping</span>
+              <span className="trust-sub">Express to 10+ Countries</span>
+            </div>
+          </div>
+
+          <div className="trust-divider" />
+
+          <div className="trust-item">
+            <div className="trust-icon-badge">
+              <Scissors size={20} />
+            </div>
+            <div className="trust-text-group">
+              <span className="trust-title">Custom Tailoring</span>
+              <span className="trust-sub">Bespoke Master Fit</span>
+            </div>
+          </div>
+
+          <div className="trust-divider" />
+
+          <div className="trust-item">
+            <div className="trust-icon-badge">
+              <RefreshCcw size={20} />
+            </div>
+            <div className="trust-text-group">
+              <span className="trust-title">Easy Exchanges</span>
+              <span className="trust-sub">7-Day Guarantee</span>
+            </div>
+          </div>
+
+          <button className="book-call-btn" onClick={() => setIsBookingModalOpen(true)}>
+            <span className="btn-shine-sweep"></span>
+            <span className="live-pulse-dot"></span>
+            <Video size={17} />
+            <span>Book a Styling Call</span>
+          </button>
         </div>
-        <div className="trust-item">
-          <Scissors size={24} />
-          <span>Custom Tailoring</span>
-        </div>
-        <div className="trust-item">
-          <RefreshCcw size={24} />
-          <span>Easy Returns</span>
-        </div>
-        <button className="book-call-btn" onClick={() => setIsBookingModalOpen(true)}>
-          <Video size={18} /> Book a Styling Call
-        </button>
       </div>
 
       {/* SECTION 2: CATEGORY SLIDER (DIPPED IN LOVE) */}
