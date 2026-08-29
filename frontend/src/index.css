@@ -2,26 +2,32 @@
 @import "tailwindcss";
 
 :root {
-  --primary-color: #1C1915; /* Deep Espresso Charcoal */
-  --bg-color: #FAF8F4; /* Cream/off-white */
+  --primary-color: #110F0D; /* Deep Royal Onyx Noir */
+  --primary-hover: #221E19;
+  --bg-color: #FDFBF7; /* Radiant Silk Alabaster */
+  --bg-subtle: #F6F2EA;
   --card-bg: #FFFFFF;
-  --accent-gold: #C9A84C; /* Warm gold */
-  --accent-gold-hover: #b3933c;
-  --accent-gold-light: #f5eedc;
-  --text-dark: #2C2C2A; /* Charcoal */
-  --text-muted: #6E6A64;
+  --accent-gold: #D4AF37; /* Luminous Royal Gold */
+  --accent-gold-hover: #E5C368;
+  --accent-gold-light: #FDF8ED;
+  --accent-gold-deep: #A88122;
+  --accent-ruby: #A81C43; /* Royal Crimson Bridal Accent */
+  --accent-emerald: #196844; /* Royal Emerald */
+  --text-dark: #161412; /* Rich Crisp Charcoal */
+  --text-muted: #6B655D;
   --white: #FFFFFF;
-  --border-light: rgba(201, 168, 76, 0.25);
+  --border-light: rgba(212, 175, 55, 0.28);
+  --border-gold: rgba(212, 175, 55, 0.55);
   
   --font-serif: 'Cormorant Garamond', serif;
   --font-sans: 'DM Sans', sans-serif;
   
-  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.02);
-  --shadow-md: 0 10px 25px rgba(28, 25, 21, 0.07);
-  --shadow-lg: 0 20px 40px rgba(28, 25, 21, 0.10);
-  --shadow-luxury: 0 30px 60px rgba(201, 168, 76, 0.14);
+  --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 12px 28px rgba(17, 15, 13, 0.08);
+  --shadow-lg: 0 24px 48px rgba(17, 15, 13, 0.12);
+  --shadow-luxury: 0 20px 50px rgba(17, 15, 13, 0.1), 0 0 25px rgba(212, 175, 55, 0.18);
   
-  --transition-smooth: all 0.3s ease;
+  --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-premium: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 
   /* Touch & Safe-area standards */
@@ -196,10 +202,16 @@ button {
 }
 
 /* Gold Gradient Overlay */
-.gold-gradient {
-  background: linear-gradient(135deg, #DFBA8C 0%, #C5A880 50%, #A4855C 100%);
+.gold-gradient, .gold-text {
+  background: linear-gradient(135deg, #F3D079 0%, #D4AF37 50%, #A88122 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #F3D079 0%, #D4AF37 50%, #A88122 100%);
+  color: #110F0D;
 }
 
 /* Beautiful Scrollbar */
@@ -235,16 +247,18 @@ button {
 /* Section Header Styles */
 .section-header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: clamp(32px, 6vw, 55px);
   position: relative;
 }
 
 .section-header h2 {
-  font-size: 38px;
+  font-size: clamp(1.65rem, 4.5vw, 2.6rem);
   margin-bottom: 12px;
   position: relative;
   display: inline-block;
   padding-bottom: 15px;
+  color: var(--primary-color);
+  letter-spacing: 0.02em;
 }
 
 .section-header h2::after {
@@ -253,33 +267,37 @@ button {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px;
-  height: 2px;
-  background-color: var(--accent-gold);
+  width: 70px;
+  height: 2.5px;
+  background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+  border-radius: 2px;
 }
 
 .section-header p {
   color: var(--text-muted);
-  font-size: 16px;
-  max-width: 600px;
+  font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+  max-width: 620px;
   margin: 0 auto;
   font-family: var(--font-sans);
-  font-weight: 300;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
 /* Glassmorphism utility */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: 0 10px 30px rgba(17, 15, 13, 0.05);
 }
 
 .dark-glass-panel {
-  background: rgba(18, 18, 18, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(197, 168, 128, 0.15);
+  background: rgba(17, 15, 13, 0.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
 /* Mobile Spacing Rhythm Scale */

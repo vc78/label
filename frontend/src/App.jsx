@@ -96,7 +96,6 @@ function App() {
                 onContactOpen={() => setIsContactOpen(true)}
                 onNavigateToGallery={navigateToGallery}
                 onNavigateToAbout={navigateToAbout}
-                onAiStylistOpen={() => setIsAiStylistOpen(true)}
               />
 
               {/* Main routing view */}

@@ -603,8 +603,8 @@
   background: var(--card-bg);
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
@@ -613,8 +613,8 @@
 
 .boutique-product-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
-  border-color: rgba(212, 175, 55, 0.35);
+  box-shadow: 0 14px 35px rgba(17, 15, 13, 0.1), 0 0 15px rgba(212, 175, 55, 0.2);
+  border-color: var(--accent-gold);
 }
 
 .card-media-wrapper {
@@ -643,15 +643,15 @@
 }
 
 .gold-discount-tag {
-  background: var(--primary-color);
-  color: var(--accent-gold);
+  background: #A81C43;
+  color: #FFFFFF;
   font-family: var(--font-sans);
   font-size: 10.5px;
   font-weight: 700;
-  padding: 3px 7px;
+  padding: 3px 8px;
   border-radius: 4px;
-  letter-spacing: 0.4px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+  letter-spacing: 0.5px;
+  box-shadow: 0 3px 8px rgba(168, 28, 67, 0.35);
 }
 
 .badge-corner-right {
@@ -662,25 +662,27 @@
 }
 
 .editorial-tag {
-  background: rgba(255, 255, 255, 0.95);
-  color: var(--primary-color);
+  background: rgba(17, 15, 13, 0.88);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  color: #F3D079;
   font-family: var(--font-sans);
   font-size: 10.5px;
   font-weight: 700;
-  padding: 3px 7px;
+  padding: 3px 8px;
   border-radius: 4px;
   text-transform: uppercase;
-  letter-spacing: 0.4px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .wishlist-floating-btn {
   position: absolute;
   bottom: 12px;
   right: 12px;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(4px);
-  border: none;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(212, 175, 55, 0.25);
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -689,17 +691,22 @@
   justify-content: center;
   cursor: pointer;
   z-index: 4;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
   transition: all 0.25s ease;
+  color: #110F0D;
 }
 
 .wishlist-floating-btn:hover {
-  transform: scale(1.1);
+  transform: scale(1.12);
   background: var(--white);
+  border-color: #A81C43;
+  color: #A81C43;
 }
 
 .wishlist-floating-btn.active {
-  background: #ffebee;
+  background: #FFEBEF;
+  border-color: #A81C43;
+  color: #A81C43;
 }
 
 .hover-action-overlay {
@@ -708,7 +715,7 @@
   left: 0;
   right: 0;
   padding: 10px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  background: linear-gradient(to top, rgba(17, 15, 13, 0.75), transparent);
   display: flex;
   gap: 6px;
   opacity: 0;
@@ -725,14 +732,12 @@
 .quick-view-btn,
 .quick-add-btn {
   flex: 1;
-  background: var(--card-bg);
-  color: var(--primary-color);
   border: none;
-  padding: 8px 6px;
+  padding: 9px 8px;
   border-radius: 6px;
   font-family: var(--font-sans);
   font-size: 11.5px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -741,17 +746,26 @@
   transition: all 0.2s ease;
 }
 
+.quick-view-btn {
+  background: #FFFFFF;
+  color: #110F0D;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
 .quick-view-btn:hover {
-  background: #f0ece1;
+  background: #FDF8ED;
+  color: #A88122;
 }
 
 .quick-add-btn {
-  background: var(--accent-gold);
-  color: var(--primary-color);
+  background: linear-gradient(135deg, #F3D079 0%, #D4AF37 100%);
+  color: #110F0D;
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.4);
 }
 
 .quick-add-btn:hover {
-  background: #c59b27;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F5EEDC 100%);
+  transform: translateY(-1px);
 }
 
 .product-details-box {

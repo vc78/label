@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ShoppingCart, Heart, Menu, X, User, AtSign, MessageSquare, Sparkles } from 'lucide-react';
+import { ShoppingCart, Heart, Menu, X, User, AtSign, MessageSquare } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import { useWishlist } from '../context/WishlistContext';
@@ -8,12 +8,11 @@ import './Navbar.css';
 
 const announcements = [
   "🌍 Now shipping worldwide — UAE · UK · USA · Australia",
-  "✨ AI Haute Couture Stylist is now LIVE — Tap for bespoke recommendations",
   "📞 Book a FREE styling consultation with Sahithi",
-  "✨ New Festive Collection dropping soon — DM to pre-order"
+  "✨ New Festive & Bridal Couture — Handcrafted with Pure Zari"
 ];
 
-const Navbar = ({ onCartOpen, onWishlistOpen, onAuthOpen, onProfileOpen, onContactOpen, onNavigateToHome, onNavigateToCollection, onNavigateToSection, onNavigateToGallery, onNavigateToAbout, onAiStylistOpen }) => {
+const Navbar = ({ onCartOpen, onWishlistOpen, onAuthOpen, onProfileOpen, onContactOpen, onNavigateToHome, onNavigateToCollection, onNavigateToSection, onNavigateToGallery, onNavigateToAbout }) => {
   const { cart } = useCart();
   const { user, logout } = useAuth();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -198,14 +197,6 @@ const Navbar = ({ onCartOpen, onWishlistOpen, onAuthOpen, onProfileOpen, onConta
               )}
             </button>
 
-            {/* AI Stylist Trigger */}
-            {onAiStylistOpen && (
-              <button onClick={onAiStylistOpen} className="nav-ai-stylist-btn" aria-label="Open AI Stylist" title="Ask AI Couture Stylist">
-                <Sparkles size={16} />
-                <span>AI Stylist</span>
-              </button>
-            )}
-
             {/* WhatsApp Contact Trigger */}
             <button onClick={handleWhatsAppContact} className="whatsapp-contact-btn" aria-label="Contact via WhatsApp">
               <MessageSquare size={18} />
@@ -235,16 +226,6 @@ const Navbar = ({ onCartOpen, onWishlistOpen, onAuthOpen, onProfileOpen, onConta
         {mobileMenuOpen && (
           <div className="mobile-menu-overlay dark-glass-panel">
             <div className="mobile-menu-links">
-              {onAiStylistOpen && (
-                <button
-                  onClick={() => { handleMobileLinkClick(); onAiStylistOpen(); }}
-                  className="mobile-ai-stylist-banner"
-                >
-                  <Sparkles size={18} />
-                  <span>Ask AI Haute Couture Stylist</span>
-                </button>
-              )}
-
               <a href="#home" onClick={handleNavigation(onNavigateToHome)} className="mobile-nav-link">Home</a>
               <a href="#shop" onClick={handleNavigation(() => onNavigateToCollection('all'))} className="mobile-nav-link">Collection</a>
               <a href="#how-to-order" onClick={handleNavigation(() => onNavigateToSection('how-to-order'))} className="mobile-nav-link">How to Order</a>
