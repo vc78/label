@@ -13,14 +13,14 @@
 }
 
 .welcome-popup-content {
-  background: linear-gradient(145deg, #252560 0%, #151535 100%);
-  color: #B8C4DC;
+  background: linear-gradient(145deg, #1C1915 0%, #2A241E 100%);
+  color: #E2DDD5;
   width: 100%;
   max-width: 850px;
   border-radius: 20px;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--accent-gold);
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.7), 0 0 0 1px var(--accent-gold);
   animation: scaleUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -30,7 +30,7 @@
   right: 20px;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #B8C4DC;
+  color: #E2DDD5;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -45,7 +45,7 @@
 
 .welcome-close-btn:hover {
   background: var(--accent-gold);
-  color: #151535;
+  color: #1C1915;
   border-color: var(--accent-gold);
   transform: rotate(90deg) scale(1.1);
 }
@@ -78,7 +78,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, transparent, rgba(37,37,96,0.3));
+  background: linear-gradient(to right, transparent, rgba(28, 25, 21, 0.4));
   pointer-events: none;
 }
 
@@ -87,7 +87,7 @@
   top: 25px;
   left: 25px;
   background: var(--accent-gold);
-  color: #151535;
+  color: #1C1915;
   padding: 8px 16px;
   font-family: var(--font-sans);
   font-size: 11px;
@@ -132,7 +132,7 @@
   font-family: var(--font-sans);
   font-size: clamp(14px, 2vw, 16px);
   line-height: 1.6;
-  color: #B8C4DC;
+  color: #E2DDD5;
   opacity: 0.9;
   margin-bottom: 35px;
 }
@@ -154,7 +154,7 @@
 
 .welcome-order-btn {
   background: linear-gradient(90deg, var(--accent-gold) 0%, #b3933c 100%);
-  color: #151535;
+  color: #1C1915;
   border: none;
   padding: 16px 35px;
   font-family: var(--font-sans);
@@ -197,7 +197,7 @@
   }
 
   .welcome-image-side::after {
-    background: linear-gradient(to bottom, transparent, rgba(37,37,96,0.8));
+    background: linear-gradient(to bottom, transparent, rgba(28, 25, 21, 0.8));
   }
 
   .welcome-text-side {

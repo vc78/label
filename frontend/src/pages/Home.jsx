@@ -81,7 +81,7 @@ const Home = ({ onAuthOpen, onProfileOpen, onNavigateToCollection, onProductClic
   const [currentSlide, setCurrentSlide] = useState(0);
   const heroSlides = [
     {
-      image: "/hero-bg.jpg",
+      image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=1600&auto=format&fit=crop",
       title: "The Festive Edit",
       subtitle: "Embrace the season in our signature handcrafted ensembles."
     },

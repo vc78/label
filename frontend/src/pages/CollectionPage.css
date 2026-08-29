@@ -478,7 +478,8 @@
 }
 
 .sidebar-promo-card {
-  background: linear-gradient(135deg, #1b263b, #0d1b2a);
+  background: linear-gradient(135deg, #1C1915, #2B251E);
+  border: 1px solid rgba(201, 168, 76, 0.3);
   color: var(--white);
   padding: 18px;
   border-radius: 10px;

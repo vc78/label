@@ -447,7 +447,7 @@ const CartDrawer = ({ isOpen, onClose, externalCoupon, onClearExternalCoupon }) 
           contact: formData.mobile
         },
         theme: {
-          color: '#1B263B'
+          color: '#1C1915'
         },
         modal: {
           ondismiss: function () {

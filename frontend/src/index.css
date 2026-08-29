@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 :root {
-  --primary-color: #252560; /* Deep forest green */
+  --primary-color: #1C1915; /* Deep Espresso Charcoal */
   --bg-color: #FAF8F4; /* Cream/off-white */
   --card-bg: #FFFFFF;
   --accent-gold: #C9A84C; /* Warm gold */
@@ -17,9 +17,9 @@
   --font-sans: 'DM Sans', sans-serif;
   
   --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.02);
-  --shadow-md: 0 10px 25px rgba(37, 37, 96, 0.05);
-  --shadow-lg: 0 20px 40px rgba(37, 37, 96, 0.08);
-  --shadow-luxury: 0 30px 60px rgba(201, 168, 76, 0.12);
+  --shadow-md: 0 10px 25px rgba(28, 25, 21, 0.07);
+  --shadow-lg: 0 20px 40px rgba(28, 25, 21, 0.10);
+  --shadow-luxury: 0 30px 60px rgba(201, 168, 76, 0.14);
   
   --transition-smooth: all 0.3s ease;
   --transition-premium: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);

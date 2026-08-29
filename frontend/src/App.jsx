@@ -15,8 +15,9 @@ import GalleryPage from './pages/GalleryPage';
 import AboutPage from './pages/AboutPage';
 import WelcomePopup from './components/WelcomePopup';
 import HotPicksDrawer from './components/HotPicksDrawer';
-import HotPicksTab from './components/HotPicksTab';
 import ContactModal from './components/ContactModal';
+import AiStylistModal from './components/AiStylistModal';
+import AiStylistButton from './components/AiStylistButton';
 import './index.css';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isHotPicksOpen, setIsHotPicksOpen] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
+  const [isAiStylistOpen, setIsAiStylistOpen] = useState(false);
 
   const [currentRoute, setCurrentRoute] = useState('home'); // 'home' | 'collection' | 'product' | 'gallery' | 'about'
   const [activeCategory, setActiveCategory] = useState('all');
@@ -94,6 +96,7 @@ function App() {
                 onContactOpen={() => setIsContactOpen(true)}
                 onNavigateToGallery={navigateToGallery}
                 onNavigateToAbout={navigateToAbout}
+                onAiStylistOpen={() => setIsAiStylistOpen(true)}
               />
 
               {/* Main routing view */}
@@ -147,9 +150,19 @@ function App() {
               {/* Global Contact Modal */}
               <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
 
+              {/* Gemini AI Haute Couture Stylist Modal */}
+              <AiStylistModal
+                isOpen={isAiStylistOpen}
+                onClose={() => setIsAiStylistOpen(false)}
+                onNavigateToProduct={navigateToProduct}
+                onNavigateToCollection={navigateToCollection}
+              />
+
+              {/* Floating AI Stylist Trigger Button */}
+              <AiStylistButton onClick={() => setIsAiStylistOpen(true)} />
+
               {/* Welcome Popup & Hot Picks Drawer */}
               <WelcomePopup onCartOpen={() => setIsCartOpen(true)} />
-              <HotPicksTab onClick={() => setIsHotPicksOpen(true)} />
               <HotPicksDrawer
                 isOpen={isHotPicksOpen}
                 onClose={() => setIsHotPicksOpen(false)}
