@@ -1,183 +1,303 @@
-/* COLD COUTURE MAISON FOOTER */
+/* ==========================================================================
+   NEOCLASSICAL ARCHITECTURAL ATELIER FOOTER
+   Theme: Alabaster Marble, Sunlit Colonnade, Champagne Gold & Royal Onyx
+   ========================================================================== */
 
 .couture-maison-footer {
-  background: transparent;
-  color: var(--text-pure);
-  border-top: 1px solid var(--border-hairline);
-  padding-top: clamp(3.5rem, 7vw, 6.5rem);
-  padding-bottom: clamp(2.5rem, 5vw, 4.5rem);
   position: relative;
+  background: linear-gradient(
+      180deg,
+      rgba(254, 252, 248, 0.92) 0%,
+      rgba(250, 247, 241, 0.95) 55%,
+      rgba(247, 242, 234, 0.97) 100%
+    ),
+    url('/images/footer-palace-bg.jpg') center bottom / cover no-repeat;
+  color: #1e1915;
+  border-top: 1px solid rgba(198, 168, 125, 0.38);
+  padding-top: clamp(3.5rem, 6.5vw, 6rem);
+  padding-bottom: clamp(2rem, 4vw, 3.5rem);
+  overflow: hidden;
 }
 
+/* TOP MONOLITH BRAND BAR */
 .footer-top-monolith {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  border-bottom: 1px solid var(--border-hairline);
-  padding-bottom: clamp(2rem, 4vw, 3.5rem);
-  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  border-bottom: 1px solid rgba(198, 168, 125, 0.28);
+  padding-bottom: clamp(1.75rem, 3.5vw, 2.75rem);
+  margin-bottom: clamp(2.5rem, 4.5vw, 3.75rem);
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .footer-brand-lockup {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.65rem;
+}
+
+.footer-brand-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  display: inline-flex;
 }
 
 .footer-brand-logo-img {
-  height: clamp(48px, 6vw, 68px);
+  height: clamp(52px, 6vw, 76px);
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 2px 10px rgba(168, 136, 91, 0.25));
+  filter: drop-shadow(0 2px 10px rgba(184, 144, 71, 0.22));
   align-self: flex-start;
+  transition: transform var(--transition-fast);
 }
 
-.footer-logotype {
-  font-size: clamp(1.8rem, 4vw, 3.2rem);
-  letter-spacing: 0.22em;
-  font-weight: 600;
-  line-height: 1;
-  color: var(--text-pure);
+.footer-brand-btn:hover .footer-brand-logo-img {
+  transform: translateY(-2px);
 }
 
 .footer-descriptor {
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  letter-spacing: 0.3em;
-  color: var(--accent-champagne);
+  letter-spacing: 0.28em;
+  color: #b89047;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
 .footer-back-top-btn {
+  background: none;
+  border: none;
   font-family: var(--font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.22em;
-  color: var(--text-graphite);
-  display: flex;
+  color: #5c5249;
+  display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  transition: color var(--transition-fast);
+  gap: 0.55rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(184, 144, 71, 0.45);
+  padding: 0.4rem 0;
 }
 
 .footer-back-top-btn:hover {
-  color: var(--text-pure);
+  color: #b89047;
+  text-decoration-color: #b89047;
+  transform: translateY(-1px);
 }
 
-/* ATELIERS GRID */
+/* ==========================================================================
+   ATELIER DESTINATION CARDS GRID (4 CITIES)
+   ========================================================================== */
 .footer-ateliers-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
-  border-bottom: 1px solid var(--border-hairline);
-  padding-bottom: clamp(2.5rem, 5vw, 4rem);
   margin-bottom: clamp(2.5rem, 5vw, 4rem);
 }
 
-@media (max-width: 1024px) {
-  .footer-ateliers-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 .atelier-city-card {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(14px);
-  border: 1px solid var(--border-hairline);
-  padding: 1.5rem;
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(198, 168, 125, 0.42);
+  border-radius: 4px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
-  transition: all var(--transition-fast);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.02);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 28px rgba(184, 144, 71, 0.07), 0 2px 6px rgba(0, 0, 0, 0.02);
 }
 
 .atelier-city-card:hover {
-  border-color: var(--accent-champagne);
-  box-shadow: 0 8px 24px rgba(168, 136, 91, 0.1);
+  transform: translateY(-5px);
+  border-color: #b89047;
+  box-shadow: 0 18px 40px rgba(184, 144, 71, 0.16), 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.city-card-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #f1ebd9;
+}
+
+.city-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
+}
+
+.atelier-city-card:hover .city-card-img {
+  transform: scale(1.06);
+}
+
+.city-card-body {
+  padding: 1.25rem 1.25rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .city-status {
   font-family: var(--font-mono);
   font-size: 0.62rem;
   letter-spacing: 0.22em;
-  color: var(--accent-champagne);
+  color: #b89047;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
 }
 
 .city-name {
-  font-size: 1.25rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
   letter-spacing: 0.12em;
-  color: var(--text-pure);
+  color: #1c1815;
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
 }
 
 .city-coords {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.12em;
-  color: var(--text-graphite);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: #7f7369;
+  margin-bottom: 0.9rem;
+  text-transform: uppercase;
+}
+
+.city-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 0.85rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
 }
 
 .city-sub {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  line-height: 1.4;
-  margin-top: 0.25rem;
+  font-size: 0.82rem;
+  color: #5c5249;
+  line-height: 1.45;
+  font-family: var(--font-sans);
+  flex: 1;
 }
 
-/* LINKS MATRIX */
+.city-action-circle {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  border-radius: 50%;
+  background: #b89047;
+  color: #ffffff;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(184, 144, 71, 0.3);
+}
+
+.atelier-city-card:hover .city-action-circle {
+  background: #9d7732;
+  transform: scale(1.1);
+}
+
+/* ==========================================================================
+   ORNAMENTAL GOLD DIVIDER WITH QUATREFOIL MOTIF
+   ========================================================================== */
+.footer-ornament-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: clamp(2.5rem, 5vw, 3.5rem) 0;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(184, 144, 71, 0.45), transparent);
+}
+
+.divider-motif {
+  color: #b89047;
+  font-size: 1.15rem;
+  line-height: 1;
+  filter: drop-shadow(0 1px 4px rgba(184, 144, 71, 0.35));
+}
+
+/* ==========================================================================
+   LINKS & MANIFESTO 4-COLUMN MATRIX
+   ========================================================================== */
 .footer-links-matrix {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1.1fr;
-  gap: clamp(2rem, 4vw, 3.5rem);
-  border-bottom: 1px solid var(--border-hairline);
-  padding-bottom: clamp(2.5rem, 5vw, 4rem);
-  margin-bottom: 2rem;
-}
-
-@media (max-width: 1024px) {
-  .footer-links-matrix {
-    grid-template-columns: 1fr 1fr;
-  }
+  grid-template-columns: 1.35fr 1fr 1.05fr 1.15fr;
+  gap: clamp(1.75rem, 3.5vw, 3.25rem);
+  margin-bottom: clamp(2.5rem, 4.5vw, 3.5rem);
 }
 
 .matrix-title {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.24em;
-  color: var(--accent-champagne);
-  margin-bottom: 1.25rem;
+  color: #b89047;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 1.35rem;
 }
 
 .manifesto-text {
-  font-size: 0.85rem;
-  color: var(--text-graphite);
-  line-height: 1.75;
-  margin-bottom: 1.5rem;
+  font-size: 0.84rem;
+  color: #554b43;
+  line-height: 1.8;
+  margin-bottom: 1.6rem;
+  font-family: var(--font-sans);
 }
 
 .footer-social-cluster {
   display: flex;
   gap: 0.75rem;
+  align-items: center;
 }
 
 .social-icon-box {
-  width: 42px;
-  height: 42px;
-  border: 1px solid var(--border-hairline);
-  background: rgba(255, 255, 255, 0.8);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(184, 144, 71, 0.45);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(8px);
-  color: var(--text-pure);
-  display: flex;
+  color: #6a5d51;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: all var(--transition-fast);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
 }
 
 .social-icon-box:hover {
-  background: var(--text-pure);
-  color: #FAFBFD;
-  border-color: var(--text-pure);
+  background: #b89047;
+  color: #ffffff;
+  border-color: #b89047;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(184, 144, 71, 0.28);
 }
 
 .footer-nav-list {
@@ -185,150 +305,245 @@
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  margin: 0;
+  padding: 0;
 }
 
 .footer-nav-list button {
+  background: none;
+  border: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-family: var(--font-sans);
-  font-size: 0.82rem;
-  color: var(--text-graphite);
+  font-size: 0.84rem;
+  color: #4e443c;
+  cursor: pointer;
+  padding: 0.25rem 0;
   text-align: left;
-  transition: all var(--transition-fast);
-  padding: 0.2rem 0;
+  transition: all 0.25s ease;
 }
 
 .footer-nav-list button:hover {
-  color: var(--text-pure);
+  color: #b89047;
   padding-left: 0.35rem;
 }
 
-/* CONCIERGE DIRECT CARD */
+.nav-chevron {
+  color: #b89047;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: transform 0.25s ease;
+}
+
+.footer-nav-list button:hover .nav-chevron {
+  transform: translateX(3px);
+}
+
+/* ==========================================================================
+   CONCIERGE DIRECT CARD
+   ========================================================================== */
 .concierge-direct-card {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(14px);
-  border: 1px solid var(--border-hairline);
-  padding: 1.25rem;
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(198, 168, 125, 0.48);
+  padding: 1.5rem;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 10px 24px rgba(184, 144, 71, 0.08);
 }
 
 .c-head {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.64rem;
   letter-spacing: 0.2em;
-  color: var(--text-muted);
+  color: #b89047;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.65rem;
+}
+
+.c-phone-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.35rem;
+}
+
+.c-phone-icon {
+  color: #b89047;
 }
 
 .c-phone {
-  font-family: var(--font-mono);
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--text-pure);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #1c1815;
 }
 
 .c-hours {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  margin-bottom: 0.75rem;
+  font-size: 0.74rem;
+  color: #756a61;
+  margin-bottom: 1.25rem;
+  font-family: var(--font-sans);
 }
 
 .concierge-footer-btn {
-  width: 100%;
-  padding: 0.65rem 1rem;
+  background: transparent;
+  border: 1px solid #b89047;
+  color: #8e6c30;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
   font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
 }
 
-/* BOTTOM BAR */
+.concierge-footer-btn:hover {
+  background: #b89047;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(184, 144, 71, 0.25);
+}
+
+/* ==========================================================================
+   BOTTOM LEGAL & PROTOCOL BAR
+   ========================================================================== */
 .footer-bottom-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-top: 1px solid rgba(198, 168, 125, 0.3);
+  padding-top: 1.75rem;
   font-family: var(--font-mono);
   font-size: 0.68rem;
-  letter-spacing: 0.18em;
-  color: var(--text-muted);
+  letter-spacing: 0.16em;
+  color: #786c62;
   gap: 1.5rem;
   flex-wrap: wrap;
 }
 
 .bottom-cert-badge {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--accent-champagne);
+  color: #b89047;
+  font-weight: 500;
 }
 
-/* COMPACT & PROFESSIONAL MOBILE FOOTER */
+/* ==========================================================================
+   RESPONSIVE DESIGN (TABLET & MOBILE)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .footer-ateliers-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .footer-links-matrix {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.25rem 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .couture-maison-footer {
-    padding-top: 2rem;
-    padding-bottom: calc(max(1.5rem, env(safe-area-inset-bottom, 0px)) + 12px);
+    padding-top: 2.5rem;
+    padding-bottom: calc(max(1.75rem, env(safe-area-inset-bottom, 0px)) + 14px);
   }
 
   .footer-top-monolith {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 1rem;
-    margin-bottom: 1.25rem;
-    gap: 0.75rem;
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.75rem;
+    gap: 1rem;
   }
 
   .footer-brand-logo-img {
-    height: 36px;
+    height: 42px;
   }
 
   .footer-descriptor {
-    font-size: 0.55rem;
-    letter-spacing: 0.16em;
+    font-size: 0.58rem;
+    letter-spacing: 0.18em;
   }
 
   .footer-back-top-btn {
-    font-size: 0.62rem;
-    letter-spacing: 0.12em;
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
     gap: 0.35rem;
   }
 
-  /* Compact 2x2 Ateliers Grid on Mobile */
+  /* Compact 2x2 Grid of Destination Cards on Mobile */
   .footer-ateliers-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
-    padding-bottom: 1.25rem;
-    margin-bottom: 1.25rem;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
   }
 
   .atelier-city-card {
-    padding: 0.65rem 0.75rem;
-    gap: 0.15rem;
     border-radius: 4px;
+  }
+
+  .city-card-body {
+    padding: 0.85rem 0.85rem 1rem;
   }
 
   .city-status {
     font-size: 0.54rem;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
   }
 
   .city-name {
-    font-size: 0.9rem;
-    letter-spacing: 0.06em;
+    font-size: 1.05rem;
+    letter-spacing: 0.08em;
   }
 
   .city-coords {
-    font-size: 0.55rem;
-    letter-spacing: 0.05em;
+    font-size: 0.56rem;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.5rem;
   }
 
   .city-sub {
-    display: none;
+    font-size: 0.72rem;
+    line-height: 1.35;
   }
 
-  /* Compact 2-column Links Matrix on Mobile */
+  .city-action-circle {
+    width: 26px;
+    height: 26px;
+    min-width: 26px;
+  }
+
+  .city-action-circle svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .footer-ornament-divider {
+    margin: 1.75rem 0 2rem;
+  }
+
+  /* Links Matrix on Mobile */
   .footer-links-matrix {
     grid-template-columns: 1fr 1fr;
-    gap: 1.25rem 0.85rem;
-    padding-bottom: 1.25rem;
-    margin-bottom: 1rem;
+    gap: 1.5rem 1rem;
+    margin-bottom: 1.75rem;
   }
 
   .manifesto-col {
@@ -336,7 +551,9 @@
   }
 
   .manifesto-text {
-    display: none;
+    font-size: 0.8rem;
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
   }
 
   .concierge-col {
@@ -345,12 +562,8 @@
 
   .matrix-title {
     font-size: 0.65rem;
-    letter-spacing: 0.16em;
-    margin-bottom: 0.6rem;
-  }
-
-  .footer-social-cluster {
-    gap: 0.5rem;
+    letter-spacing: 0.18em;
+    margin-bottom: 0.85rem;
   }
 
   .social-icon-box {
@@ -359,62 +572,54 @@
   }
 
   .footer-nav-list {
-    gap: 0.35rem;
+    gap: 0.5rem;
   }
 
   .footer-nav-list button {
-    padding: 0.15rem 0;
-    font-size: 0.76rem;
-    min-height: 26px;
-    display: inline-flex;
-    align-items: center;
+    font-size: 0.78rem;
+    min-height: 32px;
   }
 
-  /* Compact Concierge Bar on Mobile */
   .concierge-direct-card {
-    padding: 0.75rem 1rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    border-radius: 4px;
-  }
-
-  .c-head {
-    font-size: 0.58rem;
-    letter-spacing: 0.12em;
+    padding: 1rem 1.25rem;
   }
 
   .c-phone {
-    font-size: 0.9rem;
-    margin: 0;
-  }
-
-  .c-hours {
-    display: none;
+    font-size: 1.05rem;
   }
 
   .concierge-footer-btn {
-    width: auto;
-    padding: 0.45rem 0.8rem;
-    font-size: 0.65rem;
-    margin: 0;
-    min-height: 34px;
+    padding: 0.6rem 1rem;
+    min-height: 40px;
   }
 
-  /* Bottom Bar on Mobile */
   .footer-bottom-bar {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 0.45rem;
-    font-size: 0.58rem;
-    letter-spacing: 0.08em;
+    gap: 0.6rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    padding-top: 1.25rem;
   }
 
   .bottom-cert-badge {
-    font-size: 0.55rem;
+    font-size: 0.58rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-ateliers-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .city-card-image-wrap {
+    aspect-ratio: 16 / 9;
+  }
+
+  .footer-links-matrix {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }
