@@ -40,7 +40,7 @@ const AboutPage = ({ onBack }) => {
           className="about-hero-image-container"
           style={{ y: y1, opacity: opacity1 }}
         >
-          <img src="/hero-bg.jpg" alt="LABEL by SAHITHI NANDAN Atelier" onError={(e) => { e.currentTarget.src = '/images/thumbnail.jpg'; }} />
+          <img src="/hero-bg.jpg" alt="LABEL by SAHITHI NANDAN Atelier" onError={(e) => { e.currentTarget.src = '/images/hero_slide_1.jpg'; }} />
         </motion.div>
         <div className="about-hero-overlay">
           <motion.h1
@@ -118,7 +118,7 @@ const AboutPage = ({ onBack }) => {
           <motion.div className="about-grid-item" variants={fadeInUp}>
             <div className="grid-image-wrapper">
               <img
-                src="/images/thumbnail.jpg"
+                src="/images/atelier-hyderabad.jpg"
                 alt="Personal Trousseau Consultation"
                 onError={(e) => { e.currentTarget.src = '/images/i2.png'; }}
               />
