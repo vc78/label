@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowLeft, Camera, MessageCircle, Sparkles, Award } from 'lucide-react';
+import { ArrowLeft, Camera, MessageCircle, Award } from 'lucide-react';
 import './AboutPage.css';
 
 const AboutPage = ({ onBack }) => {
@@ -72,19 +72,6 @@ const AboutPage = ({ onBack }) => {
           variants={fadeInUp}
         >
           <div className="founder-card-grid">
-            <div className="founder-image-box">
-              <img
-                src="/images/founder.jpg"
-                alt="Sahithi Garlapati — Founder & Chief Designer"
-                className="founder-portrait-img"
-                onError={(e) => { e.currentTarget.src = '/images/thumbnail.jpg'; }}
-              />
-              <div className="founder-badge">
-                <Sparkles size={14} color="var(--accent-gold)" />
-                <span>Founder & Chief Designer</span>
-              </div>
-            </div>
-
             <div className="founder-narrative">
               <div className="section-tag">
                 <Award size={14} /> <span>Our Atelier Story</span>
