@@ -644,40 +644,40 @@ const CartDrawer = ({ isOpen, onClose, externalCoupon, onClearExternalCoupon }) 
 
                   <div className="form-group">
                     <label>Full Name *</label>
-                    <input type="text" name="name" value={formData.name} onChange={handleInputChange} placeholder="e.g. Ananya Sharma" required />
+                    <input type="text" name="name" autoComplete="name" value={formData.name} onChange={handleInputChange} placeholder="e.g. Ananya Sharma" required />
                   </div>
 
                   <div className="form-row">
                     <div className="form-group">
                       <label>Email *</label>
-                      <input type="email" name="email" value={formData.email} onChange={handleInputChange} placeholder="ananya@example.com" required />
+                      <input type="email" name="email" inputMode="email" autoComplete="email" value={formData.email} onChange={handleInputChange} placeholder="ananya@example.com" required />
                     </div>
                     <div className="form-group">
                       <label>WhatsApp Mobile *</label>
-                      <input type="tel" name="mobile" value={formData.mobile} onChange={handleInputChange} placeholder="10-digit number" required />
+                      <input type="tel" name="mobile" inputMode="tel" autoComplete="tel" value={formData.mobile} onChange={handleInputChange} placeholder="10-digit number" required />
                     </div>
                   </div>
 
                   <div className="form-group">
                     <label>Delivery Address *</label>
-                    <textarea name="address" value={formData.address} onChange={handleInputChange} placeholder="Flat / House No., Building Name, Street" rows="2" required />
+                    <textarea name="address" autoComplete="street-address" value={formData.address} onChange={handleInputChange} placeholder="Flat / House No., Building Name, Street" rows="2" required />
                   </div>
 
                   <div className="form-row">
                     <div className="form-group">
                       <label>Pincode *</label>
-                      <input type="text" name="pincode" value={formData.pincode} onChange={handlePincodeChange} placeholder="6 digits" maxLength={6} required />
+                      <input type="text" name="pincode" inputMode="numeric" autoComplete="postal-code" value={formData.pincode} onChange={handlePincodeChange} placeholder="6 digits" maxLength={6} required />
                     </div>
                     <div className="form-group">
                       <label>City *</label>
-                      <input type="text" name="city" value={formData.city} onChange={handleInputChange} placeholder="City" required />
+                      <input type="text" name="city" autoComplete="address-level2" value={formData.city} onChange={handleInputChange} placeholder="City" required />
                     </div>
                   </div>
 
                   <div className="form-row">
                     <div className="form-group">
                       <label>State *</label>
-                      <input type="text" name="state" value={formData.state} onChange={handleInputChange} placeholder="State" required />
+                      <input type="text" name="state" autoComplete="address-level1" value={formData.state} onChange={handleInputChange} placeholder="State" required />
                     </div>
                     <div className="form-group">
                       <label>Landmark</label>

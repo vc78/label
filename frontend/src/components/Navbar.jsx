@@ -20,6 +20,10 @@ const Navbar = ({
   onContactOpen,
   onNavigateToHome,
   onNavigateToCollection,
+  onNavigateToSilhouettes,
+  onNavigateToPrivateSalon,
+  onNavigateToCraft,
+  onNavigateToLookbook,
   onNavigateToSection,
   onNavigateToGallery,
   onNavigateToAbout
@@ -132,16 +136,16 @@ const Navbar = ({
               ARCHIVE
             </button>
             <button
-              onClick={() => onNavigateToSection('silhouettes')}
+              onClick={onNavigateToSilhouettes || (() => onNavigateToSection('silhouettes'))}
               className="nav-link-item"
             >
               SILHOUETTES
             </button>
             <button
-              onClick={() => onNavigateToSection('digital-atelier')}
+              onClick={onNavigateToCraft || (() => onNavigateToSection('craft-narrative'))}
               className="nav-link-item"
             >
-              DIGITAL ATELIER
+              CRAFT NARRATIVE
             </button>
           </nav>
 
@@ -154,19 +158,19 @@ const Navbar = ({
           {/* Desktop Right Nav Links */}
           <nav className="desktop-nav-menu right-nav">
             <button
-              onClick={() => onNavigateToSection('craft-narrative')}
-              className="nav-link-item"
-            >
-              CRAFT NARRATIVE
-            </button>
-            <button
-              onClick={() => onNavigateToSection('lookbook')}
+              onClick={onNavigateToLookbook || (() => onNavigateToSection('lookbook'))}
               className="nav-link-item"
             >
               LOOKBOOK
             </button>
             <button
-              onClick={() => onNavigateToSection('private-salon')}
+              onClick={onNavigateToAbout || (() => onNavigateToSection('about'))}
+              className="nav-link-item"
+            >
+              ABOUT
+            </button>
+            <button
+              onClick={onNavigateToPrivateSalon || (() => onNavigateToSection('private-salon'))}
               className="nav-link-item highlight-link"
             >
               PRIVATE SALON
@@ -352,7 +356,8 @@ const Navbar = ({
                     className="drawer-link-item highlight-drawer-item"
                     onClick={() => {
                       handleMobileLinkClick();
-                      onNavigateToSection('silhouettes');
+                      if (onNavigateToSilhouettes) onNavigateToSilhouettes();
+                      else onNavigateToSection('silhouettes');
                     }}
                   >
                     <Compass size={16} />
@@ -362,17 +367,8 @@ const Navbar = ({
                     className="drawer-link-item highlight-drawer-item"
                     onClick={() => {
                       handleMobileLinkClick();
-                      onNavigateToSection('digital-atelier');
-                    }}
-                  >
-                    <Scissors size={16} />
-                    <span>Digital Customization Atelier</span>
-                  </button>
-                  <button
-                    className="drawer-link-item highlight-drawer-item"
-                    onClick={() => {
-                      handleMobileLinkClick();
-                      onNavigateToSection('craft-narrative');
+                      if (onNavigateToCraft) onNavigateToCraft();
+                      else onNavigateToSection('craft-narrative');
                     }}
                   >
                     <Layers size={16} />
@@ -382,7 +378,8 @@ const Navbar = ({
                     className="drawer-link-item highlight-drawer-item"
                     onClick={() => {
                       handleMobileLinkClick();
-                      onNavigateToSection('lookbook');
+                      if (onNavigateToLookbook) onNavigateToLookbook();
+                      else onNavigateToSection('lookbook');
                     }}
                   >
                     <Sparkles size={16} />
@@ -392,11 +389,12 @@ const Navbar = ({
                     className="drawer-link-item highlight-drawer-item"
                     onClick={() => {
                       handleMobileLinkClick();
-                      onNavigateToSection('private-salon');
+                      if (onNavigateToPrivateSalon) onNavigateToPrivateSalon();
+                      else onNavigateToSection('private-salon');
                     }}
                   >
-                    <MessageSquare size={16} />
-                    <span>Private Salon Booking</span>
+                    <Scissors size={16} />
+                    <span>Private Atelier Salon</span>
                   </button>
                 </div>
 

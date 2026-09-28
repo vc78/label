@@ -87,6 +87,17 @@
 @media (max-width: 900px) {
   .craft-scrub-bar {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .tab-line-progress {
+    bottom: 0 !important;
+  }
+
+  .craft-scrub-tab {
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid var(--border-hairline);
   }
 }
 
@@ -310,3 +321,38 @@
   color: var(--text-pure);
   font-weight: 600;
 }
+
+/* RESPONSIVE QA */
+@media (max-width: 600px) {
+  .craft-narrative-card {
+    padding: 1.25rem;
+  }
+
+  .craft-stage-heading {
+    font-size: clamp(1.4rem, 6vw, 1.85rem);
+  }
+
+  .craft-stage-subheading {
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .craft-bullets-list {
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .side-spec-box {
+    padding: 1.25rem;
+  }
+
+  .craft-cta-row {
+    flex-direction: column;
+  }
+
+  .craft-cta-row button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+

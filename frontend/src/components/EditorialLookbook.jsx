@@ -9,7 +9,7 @@ const LOOKS = [
     edition: 'SÉRIE NOIRE',
     title: 'The Monolith Void Silhouette',
     subtitle: 'High-density Mulberry raw silk paired with razor-tailored corsetry.',
-    image: '/images/i1.png',
+    image: '/images/hero_slide_1.jpg',
     productId: 'saree-1',
     modelStats: '178 CM · 32-24-35 · BESPOKE SIZE 38',
     composition: '100% Raw Katan Silk · Antique Icy Zari',

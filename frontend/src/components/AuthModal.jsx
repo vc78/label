@@ -87,6 +87,7 @@ const AuthModal = ({ isOpen, onClose }) => {
                     type="text"
                     id="name"
                     name="name"
+                    autoComplete="name"
                     value={formData.name}
                     onChange={handleChange}
                     required
@@ -98,6 +99,8 @@ const AuthModal = ({ isOpen, onClose }) => {
                     type="tel"
                     id="mobile"
                     name="mobile"
+                    inputMode="tel"
+                    autoComplete="tel"
                     value={formData.mobile}
                     onChange={handleChange}
                     required
@@ -112,6 +115,8 @@ const AuthModal = ({ isOpen, onClose }) => {
                 type="email"
                 id="email"
                 name="email"
+                inputMode="email"
+                autoComplete="email"
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -124,6 +129,7 @@ const AuthModal = ({ isOpen, onClose }) => {
                 type="password"
                 id="password"
                 name="password"
+                autoComplete={isLogin ? "current-password" : "new-password"}
                 value={formData.password}
                 onChange={handleChange}
                 required

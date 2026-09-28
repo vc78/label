@@ -363,13 +363,41 @@
 }
 
 @media (max-width: 600px) {
+  .ai-stylist-backdrop {
+    padding: 0;
+    align-items: flex-end;
+  }
+
   .ai-stylist-modal-card {
-    height: 92dvh;
-    border-radius: 16px;
+    height: 94dvh;
+    max-height: 94dvh;
+    border-radius: 18px 18px 0 0;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .ai-messages-container {
+    padding: 12px 14px;
+    gap: 10px;
+  }
+
+  .ai-message-row {
+    max-width: 94%;
+  }
+
+  .ai-bubble {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  .ai-input-bar {
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom, 0px));
   }
 
   .ai-whatsapp-bridge {
     flex-direction: column;
     gap: 6px;
+    padding: 6px 12px;
   }
 }
+

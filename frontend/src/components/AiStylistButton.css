@@ -59,9 +59,35 @@
     bottom: calc(18px + env(safe-area-inset-bottom, 0px));
     left: 14px;
     padding: 8px 14px 8px 10px;
+    min-height: 40px;
   }
 
   .ai-trigger-label {
     font-size: 12px;
+  }
+}
+
+/* Avoid collision with Mobile Sticky Purchase Dock on Product Page */
+@media (max-width: 860px) {
+  body:has(.mobile-sticky-purchase-dock) .ai-floating-trigger-btn {
+    bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+@media (max-width: 380px) {
+  .ai-floating-trigger-btn {
+    left: 10px;
+    padding: 7px 11px 7px 8px;
+    gap: 6px;
+  }
+
+  .ai-trigger-icon-wrap {
+    width: 22px;
+    height: 22px;
+  }
+
+  .ai-trigger-label {
+    font-size: 11px;
+    letter-spacing: 0.2px;
   }
 }

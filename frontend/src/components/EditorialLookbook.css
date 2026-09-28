@@ -269,9 +269,18 @@
     justify-content: space-between;
   }
 
+  .editorial-spread-grid {
+    gap: 1.5rem;
+  }
+
+  .spread-image-wrapper {
+    aspect-ratio: 4 / 4.5;
+    max-height: 440px;
+  }
+
   .spread-edition-badge {
-    top: 1rem;
-    left: 1rem;
+    top: 0.85rem;
+    left: 0.85rem;
     padding: 0.3rem 0.65rem;
     font-size: 0.65rem;
   }
@@ -286,5 +295,23 @@
 
   .lookbook-thumbnail-rail {
     padding-bottom: 0.85rem;
+    gap: 0.5rem;
+  }
+
+  .acquire-look-btn {
+    min-height: 44px;
   }
 }
+
+@media (max-width: 480px) {
+  .lookbook-nav-btn {
+    width: 42px;
+    height: 42px;
+  }
+
+  .thumb-card {
+    width: 54px;
+    height: 72px;
+  }
+}
+

@@ -512,3 +512,63 @@
   border-color: var(--accent-champagne);
   box-shadow: 0 0 0 2px rgba(168, 136, 91, 0.15);
 }
+
+/* RESPONSIVE QA */
+@media (max-width: 768px) {
+  .atelier-visual-stage {
+    aspect-ratio: 4 / 3.8;
+    max-height: 400px;
+  }
+
+  .control-block {
+    padding: 1.15rem;
+  }
+
+  .atelier-summary-card {
+    padding: 1.15rem;
+  }
+
+  .base-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .finish-pill-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .atelier-floating-price {
+    padding: 0.75rem 1rem;
+    bottom: 0.85rem;
+    left: 0.85rem;
+    right: 0.85rem;
+  }
+
+  .floating-value {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .finish-pill-row {
+    grid-template-columns: 1fr;
+  }
+
+  .f-title-line {
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .fabric-item-row {
+    padding: 0.75rem 0.85rem;
+  }
+
+  .hem-pill {
+    padding: 0.55rem 0.85rem;
+    font-size: 0.7rem;
+  }
+
+  .atelier-input {
+    padding: 0.55rem 0.7rem;
+  }
+}
+

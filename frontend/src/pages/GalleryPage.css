@@ -220,25 +220,40 @@
   overflow: hidden;
 }
 
-/* Mobile Responsiveness */
+/* Tablet and Mobile Responsiveness */
+@media (max-width: 1024px) {
+  .reels-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .reels-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+}
+
 @media (max-width: 600px) {
   .gallery-page {
     padding-top: 76px;
+    padding-bottom: calc(40px + env(safe-area-inset-bottom, 0px));
   }
 
   .gallery-header-nav,
   .reels-section {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 14px;
+    padding-right: 14px;
   }
 
   .reels-header {
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
 
   .reels-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
+    gap: 10px;
   }
 
   .video-card {
@@ -250,11 +265,11 @@
   }
 
   .gallery-image-caption {
-    padding: 42px 11px 12px;
+    padding: 36px 10px 10px;
   }
 
   .gallery-image-caption h3 {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .gallery-image-caption p {
@@ -262,12 +277,12 @@
   }
 
   .video-overlay h3 {
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.2;
   }
 
   .video-overlay p {
-    font-size: 11px;
+    font-size: 10px;
   }
 
   .control-btn {
@@ -282,20 +297,21 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 360px) {
   .reels-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .video-overlay {
-    padding: 32px 10px 12px;
+    padding: 32px 14px 14px;
   }
 
   .video-overlay h3 {
-    font-size: 12px;
+    font-size: 15px;
   }
 
   .video-overlay p {
-    font-size: 10px;
+    font-size: 11px;
   }
 }

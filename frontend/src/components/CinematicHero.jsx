@@ -6,7 +6,7 @@ import './CinematicHero.css';
 const HERO_SLIDES = [
   {
     id: 'winter-editions',
-    image: '/images/user_reference_hero.png',
+    image: '/images/hero_slide_1.jpg',
     badge: 'DIGITAL COUTURE HOUSE · ARCHIVE 2026.IV · HYDERABAD',
     title: 'COLD COUTURE',
     subtitle: 'THE WINTER EDITIONS',
@@ -34,17 +34,6 @@ const HERO_SLIDES = [
     subtitle: 'ARCHITECTURAL SILHOUETTES',
     description:
       'Millimeter-calibrated laser measurements crafted for royal trousseaus and global galas. Quiet grandeur and structural majesty redefined.',
-    primaryCta: 'EXPLORE SILHOUETTES',
-    secondaryCta: 'ENTER DIGITAL ATELIER'
-  },
-  {
-    id: 'maison-essence',
-    image: '/images/hero_slide_1.jpg',
-    badge: 'ATELIER MONOGRAM · ARCHIVE 2026.IV · HYDERABAD',
-    title: 'MAISON ESSENCE',
-    subtitle: 'SCULPTED PURITY',
-    description:
-      'Translucent raw silk organza, sculpted golden laurel filigree, and unadorned structural clarity across all bespoke couture creations.',
     primaryCta: 'EXPLORE SILHOUETTES',
     secondaryCta: 'ENTER DIGITAL ATELIER'
   }

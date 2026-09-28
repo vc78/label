@@ -80,12 +80,6 @@
   }
 }
 
-@media (max-width: 550px) {
-  .footer-ateliers-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 .atelier-city-card {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(14px);
@@ -143,12 +137,6 @@
 @media (max-width: 1024px) {
   .footer-links-matrix {
     grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 650px) {
-  .footer-links-matrix {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -271,16 +259,162 @@
   color: var(--accent-champagne);
 }
 
-@media (max-width: 600px) {
-  .footer-top-monolith {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
+/* COMPACT & PROFESSIONAL MOBILE FOOTER */
+@media (max-width: 768px) {
+  .couture-maison-footer {
+    padding-top: 2rem;
+    padding-bottom: calc(max(1.5rem, env(safe-area-inset-bottom, 0px)) + 12px);
   }
 
+  .footer-top-monolith {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    margin-bottom: 1.25rem;
+    gap: 0.75rem;
+  }
+
+  .footer-brand-logo-img {
+    height: 36px;
+  }
+
+  .footer-descriptor {
+    font-size: 0.55rem;
+    letter-spacing: 0.16em;
+  }
+
+  .footer-back-top-btn {
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    gap: 0.35rem;
+  }
+
+  /* Compact 2x2 Ateliers Grid on Mobile */
+  .footer-ateliers-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .atelier-city-card {
+    padding: 0.65rem 0.75rem;
+    gap: 0.15rem;
+    border-radius: 4px;
+  }
+
+  .city-status {
+    font-size: 0.54rem;
+    letter-spacing: 0.12em;
+  }
+
+  .city-name {
+    font-size: 0.9rem;
+    letter-spacing: 0.06em;
+  }
+
+  .city-coords {
+    font-size: 0.55rem;
+    letter-spacing: 0.05em;
+  }
+
+  .city-sub {
+    display: none;
+  }
+
+  /* Compact 2-column Links Matrix on Mobile */
+  .footer-links-matrix {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem 0.85rem;
+    padding-bottom: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .manifesto-col {
+    grid-column: 1 / -1;
+  }
+
+  .manifesto-text {
+    display: none;
+  }
+
+  .concierge-col {
+    grid-column: 1 / -1;
+  }
+
+  .matrix-title {
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+    margin-bottom: 0.6rem;
+  }
+
+  .footer-social-cluster {
+    gap: 0.5rem;
+  }
+
+  .social-icon-box {
+    width: 36px;
+    height: 36px;
+  }
+
+  .footer-nav-list {
+    gap: 0.35rem;
+  }
+
+  .footer-nav-list button {
+    padding: 0.15rem 0;
+    font-size: 0.76rem;
+    min-height: 26px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Compact Concierge Bar on Mobile */
+  .concierge-direct-card {
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    border-radius: 4px;
+  }
+
+  .c-head {
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+  }
+
+  .c-phone {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .c-hours {
+    display: none;
+  }
+
+  .concierge-footer-btn {
+    width: auto;
+    padding: 0.45rem 0.8rem;
+    font-size: 0.65rem;
+    margin: 0;
+    min-height: 34px;
+  }
+
+  /* Bottom Bar on Mobile */
   .footer-bottom-bar {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 0.85rem;
+    align-items: center;
+    text-align: center;
+    gap: 0.45rem;
+    font-size: 0.58rem;
+    letter-spacing: 0.08em;
+  }
+
+  .bottom-cert-badge {
+    font-size: 0.55rem;
   }
 }

@@ -67,3 +67,15 @@ section {
     gap: 1.5rem;
   }
 }
+
+@media (max-width: 480px) {
+  .maison-ticker-strip {
+    padding: 0.65rem 0;
+  }
+
+  .ticker-track {
+    font-size: 0.62rem;
+    gap: 1.2rem;
+    letter-spacing: 0.18em;
+  }
+}

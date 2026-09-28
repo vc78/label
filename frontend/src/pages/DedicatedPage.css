@@ -1,0 +1,95 @@
+/* DEDICATED ARCHITECTURAL PAGES STYLES */
+.dedicated-page-wrapper {
+  padding-top: clamp(80px, 12vw, 100px);
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
+  background-color: var(--bg-obsidian);
+  color: var(--text-porcelain);
+}
+
+.dedicated-page-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0 1.5rem 0;
+  border-bottom: 1px solid var(--border-hairline);
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.back-btn-chic {
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  padding: 10px 18px;
+  min-height: 44px;
+  border-radius: 30px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-pure);
+  transition: all var(--transition-fast);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.back-btn-chic:hover {
+  background: var(--text-pure);
+  color: #FFFFFF;
+  border-color: var(--text-pure);
+  transform: translateX(-3px);
+}
+
+.dedicated-breadcrumbs {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.crumb-link {
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.crumb-link:hover {
+  color: var(--text-pure);
+}
+
+.crumb-sep {
+  color: var(--border-strong);
+}
+
+.crumb-active {
+  color: var(--accent-champagne);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .dedicated-page-wrapper {
+    padding-top: clamp(65px, 12vw, 80px);
+  }
+
+  .dedicated-page-nav {
+    padding: 0.75rem 0 1rem 0;
+    margin-bottom: 1rem;
+  }
+
+  .back-btn-chic {
+    padding: 8px 14px;
+    font-size: 12px;
+    min-height: 44px;
+  }
+
+  .dedicated-breadcrumbs {
+    font-size: 0.65rem;
+  }
+}

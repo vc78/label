@@ -54,6 +54,7 @@
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-hairline);
   transition: all var(--transition-smooth);
+  padding-top: env(safe-area-inset-top, 0px);
 }
 
 .couture-navbar.navbar-scrolled {
@@ -416,4 +417,73 @@
 
 .drawer-concierge-btn {
   width: 100%;
+}
+
+/* RESPONSIVE QA & MOBILE OPTIMIZATIONS */
+@media (max-width: 768px) {
+  .couture-announcement-bar {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+  }
+
+  .navbar-inner-flex {
+    height: clamp(56px, 12vw, 64px);
+    min-height: 56px;
+    max-height: 64px;
+    gap: 0.65rem;
+  }
+
+  .navbar-brand-mark {
+    padding: 0 0.35rem;
+  }
+
+  .navbar-brand-logo-img {
+    height: 38px;
+  }
+
+  .brand-sub-descriptor {
+    font-size: 0.52rem;
+    letter-spacing: 0.22em;
+  }
+
+  .navbar-utilities {
+    gap: 0.35rem;
+  }
+
+  .nav-utility-btn {
+    padding: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-drawer-sheet {
+    width: min(88vw, 340px);
+    padding: 1.25rem;
+    padding-top: max(1.25rem, env(safe-area-inset-top));
+    padding-bottom: max(1.25rem, env(safe-area-inset-bottom));
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar-inner-flex {
+    gap: 0.25rem;
+  }
+
+  .navbar-brand-mark {
+    padding: 0 0.1rem;
+  }
+
+  .navbar-brand-logo-img {
+    height: 33px;
+  }
+
+  .brand-sub-descriptor {
+    font-size: 0.46rem;
+    letter-spacing: 0.15em;
+  }
+
+  .navbar-utilities {
+    gap: 0.2rem;
+  }
 }

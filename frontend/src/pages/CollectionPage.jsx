@@ -155,6 +155,8 @@ const CollectionPage = ({ initialCategory = 'all', onBack, onProductClick }) => 
               <Search size={18} className="search-icon" />
               <input
                 type="text"
+                inputMode="search"
+                autoComplete="off"
                 placeholder="Search outfits, fabrics, colors..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}

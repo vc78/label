@@ -299,6 +299,13 @@
 
   .mode-card {
     padding: 1rem;
+    min-height: 48px;
+  }
+
+  .couture-field {
+    min-height: 44px;
+    padding: 0.75rem 0.85rem;
+    font-size: 14px;
   }
 
   .booking-date-inputs {
@@ -309,9 +316,15 @@
     grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
   }
 
+  .submit-booking-btn {
+    min-height: 48px;
+  }
+
   .success-actions-row .btn-couture-primary,
   .success-actions-row .btn-couture-outline {
     width: 100%;
     justify-content: center;
+    min-height: 44px;
   }
 }
+

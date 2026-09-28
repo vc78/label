@@ -129,7 +129,7 @@ const Footer = ({ _onNavigateToHome, onNavigateToCollection, onNavigateToSection
             <h4 className="matrix-title">ATELIER EXPERIENCES</h4>
             <ul className="footer-nav-list">
               <li><button onClick={() => onNavigateToSection('silhouettes')}>Find Your Silhouette</button></li>
-              <li><button onClick={() => onNavigateToSection('digital-atelier')}>The Digital Customizer</button></li>
+              <li><button onClick={() => onNavigateToSection('private-salon')}>Bespoke Salon Reservation</button></li>
               <li><button onClick={() => onNavigateToSection('craft-narrative')}>Craft Behind The Piece</button></li>
               <li><button onClick={() => onNavigateToSection('lookbook')}>Campaign Lookbook</button></li>
               <li><button onClick={() => onNavigateToSection('private-salon')}>Private Salon Reservation</button></li>
@@ -138,7 +138,7 @@ const Footer = ({ _onNavigateToHome, onNavigateToCollection, onNavigateToSection
           </div>
 
           {/* Col 4: Concierge & Client Protocol */}
-          <div className="matrix-col">
+          <div className="matrix-col concierge-col">
             <h4 className="matrix-title">CLIENT CONCIERGE</h4>
             <div className="concierge-direct-card">
               <span className="c-head">PRIVATE ATELIER DISPATCH</span>

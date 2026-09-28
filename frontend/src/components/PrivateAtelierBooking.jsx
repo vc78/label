@@ -196,6 +196,7 @@ const PrivateAtelierBooking = () => {
                       <input
                         type="text"
                         required
+                        autoComplete="name"
                         placeholder="e.g. Radhika Verma"
                         className="couture-field"
                         value={formData.name}
@@ -208,6 +209,8 @@ const PrivateAtelierBooking = () => {
                       <input
                         type="tel"
                         required
+                        inputMode="tel"
+                        autoComplete="tel"
                         placeholder="+91 / International Phone"
                         className="couture-field"
                         value={formData.phone}
@@ -219,6 +222,8 @@ const PrivateAtelierBooking = () => {
                       <label className="field-label">Email Address</label>
                       <input
                         type="email"
+                        inputMode="email"
+                        autoComplete="email"
                         placeholder="client@couture.com"
                         className="couture-field"
                         value={formData.email}
@@ -230,6 +235,7 @@ const PrivateAtelierBooking = () => {
                       <label className="field-label">Occasion / Wedding Date</label>
                       <input
                         type="date"
+                        autoComplete="off"
                         className="couture-field"
                         value={formData.eventDate}
                         onChange={(e) => setFormData({ ...formData, eventDate: e.target.value })}

@@ -3,21 +3,22 @@ import { useCart } from '../context/CartContext';
 import { useToast } from '../context/ToastContext';
 import CinematicHero from '../components/CinematicHero';
 import EditorialCollectionRail from '../components/EditorialCollectionRail';
-import SilhouetteDiscovery from '../components/SilhouetteDiscovery';
-import CraftNarrative from '../components/CraftNarrative';
-import DigitalAtelier from '../components/DigitalAtelier';
-import EditorialLookbook from '../components/EditorialLookbook';
-import PrivateAtelierBooking from '../components/PrivateAtelierBooking';
+import MainCollectionShowcase from '../components/MainCollectionShowcase';
 import EditorialTestimonials from '../components/EditorialTestimonials';
 import Footer from '../components/Footer';
 import QuickViewModal from '../components/QuickViewModal';
-import InteractiveCoutureCanvas from '../components/InteractiveCoutureCanvas';
 import './Home.css';
 
 const Home = ({
   _onAuthOpen,
   _onProfileOpen,
   onNavigateToCollection,
+  onNavigateToSilhouettes,
+  onNavigateToPrivateSalon,
+  onNavigateToCraft,
+  onNavigateToLookbook,
+  onNavigateToAbout,
+  onNavigateToGallery,
   onProductClick,
   _onApplyCoupon
 }) => {
@@ -41,19 +42,12 @@ const Home = ({
     addToast(`${product.name || product.title} added to Couture Bag`, 'success');
   };
 
-  const scrollToSection = (sectionId) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <div className="cold-couture-homepage">
-      {/* Interactive Framer Motion Dynamic Luminous Canvas */}
-      <InteractiveCoutureCanvas />
-
-      {/* 01. Cinematic Hero with Cursor-Responsive Parallax */}
+      {/* 01. Cinematic Hero with Direct Page Portals */}
       <CinematicHero
-        onExploreSilhouettes={() => scrollToSection('silhouettes')}
-        onOpenAtelier={() => scrollToSection('digital-atelier')}
+        onExploreSilhouettes={onNavigateToSilhouettes || (() => onNavigateToCollection('all'))}
+        onOpenAtelier={onNavigateToPrivateSalon || (() => onNavigateToCollection('all'))}
       />
 
       {/* Architectural Maison Ticker Strip */}
@@ -78,49 +72,36 @@ const Home = ({
         </div>
       </div>
 
-      {/* 02. The Editorial Collection Rail */}
+      {/* 02. The Items & Top Collections Rail */}
       <EditorialCollectionRail
         onProductClick={handleOpenProduct}
         onAddToCart={handleAddToCart}
       />
 
-      {/* 03. Interactive "Find Your Silhouette" Discovery Experience */}
-      <SilhouetteDiscovery
+      {/* 03. Simple Showcase of More Collection Items */}
+      <MainCollectionShowcase
         onProductClick={handleOpenProduct}
         onAddToCart={handleAddToCart}
+        onNavigateToCollection={onNavigateToCollection}
       />
 
-      {/* 04. "Craft Behind the Piece" Scroll Narrative */}
-      <CraftNarrative
-        onOpenConsultation={() => scrollToSection('private-salon')}
-      />
-
-      {/* 05. The Digital Atelier (Product Customization Suite) */}
-      <DigitalAtelier
-        onCustomPieceCreated={(_piece) => {
-          // Handled via CartContext in DigitalAtelier
-        }}
-      />
-
-      {/* 06. Immersive Campaign Lookbook */}
-      <EditorialLookbook
-        onProductClick={handleOpenProduct}
-      />
-
-      {/* 07. Private Atelier & Virtual Salon Consultation */}
-      <PrivateAtelierBooking />
-
-      {/* 08. Cinematic Editorial Testimonials & Patron Voices */}
+      {/* 04. Customer Reviews & Patron Voices Matching Design Reference */}
       <EditorialTestimonials />
 
-      {/* 09. Cold Couture Architectural Footer */}
+      {/* 04. Architectural Footer */}
       <Footer
         onNavigateToHome={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         onNavigateToCollection={onNavigateToCollection}
-        onNavigateToSection={scrollToSection}
-        onNavigateToGallery={() => {}}
-        onNavigateToAbout={() => {}}
-        onContactOpen={() => scrollToSection('private-salon')}
+        onNavigateToSection={(section) => {
+          if (section === 'silhouettes' && onNavigateToSilhouettes) onNavigateToSilhouettes();
+          else if (section === 'craft-narrative' && onNavigateToCraft) onNavigateToCraft();
+          else if (section === 'lookbook' && onNavigateToLookbook) onNavigateToLookbook();
+          else if (section === 'private-salon' && onNavigateToPrivateSalon) onNavigateToPrivateSalon();
+          else onNavigateToCollection('all');
+        }}
+        onNavigateToGallery={onNavigateToGallery}
+        onNavigateToAbout={onNavigateToAbout}
+        onContactOpen={onNavigateToPrivateSalon}
       />
 
       {/* Quick View Modal fallback */}

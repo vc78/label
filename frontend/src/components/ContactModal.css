@@ -295,6 +295,31 @@
   }
   
   .map-container {
-    min-height: 250px;
+    min-height: 220px;
   }
 }
+
+@media (max-width: 500px) {
+  .contact-modal-overlay {
+    padding: 10px 8px;
+  }
+
+  .contact-form-section,
+  .contact-info-section {
+    padding: 20px 16px;
+  }
+
+  .contact-header h2 {
+    font-size: 24px;
+  }
+
+  .contact-submit-btn {
+    min-height: 48px;
+  }
+
+  .contact-actions {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+

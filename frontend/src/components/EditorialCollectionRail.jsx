@@ -87,6 +87,62 @@ const RAIL_PIECES = [
     hours: '75 Hours',
     silhouette: 'Architectural Column',
     tag: 'Restrained Luxe'
+  },
+  {
+    id: 'rail-7',
+    edition: '07 / ARCHIVE',
+    title: 'Ivory Chanderi Royal Anarkali',
+    category: 'Royal Anarkali',
+    image: '/images/i7.png',
+    price: 15500,
+    originalPrice: 18000,
+    fabric: 'Mulberry Silk Chanderi',
+    weave: 'Platinum Resham Weft',
+    hours: '120 Hours',
+    silhouette: 'Flared Royale',
+    tag: 'Couture Classic'
+  },
+  {
+    id: 'rail-8',
+    edition: '08 / ARCHIVE',
+    title: 'Gilded Banarasi Brocade Weave',
+    category: 'Handloom Saree',
+    image: '/images/i8.png',
+    price: 16800,
+    originalPrice: 19500,
+    fabric: 'Pure Katan Banarasi Silk',
+    weave: 'Antique Champagne Zari',
+    hours: '160 Hours',
+    silhouette: 'Heritage Drape',
+    tag: 'Masterpiece'
+  },
+  {
+    id: 'rail-9',
+    edition: '09 / ARCHIVE',
+    title: 'Midnight Velvet Zardozi Cape',
+    category: 'Evening Couture',
+    image: '/images/i9.png',
+    price: 18200,
+    originalPrice: 21000,
+    fabric: 'Micro-Velvet Silk',
+    weave: 'Cold-Wire Zardozi',
+    hours: '135 Hours',
+    silhouette: 'Dramatic Cape',
+    tag: 'New Arrival'
+  },
+  {
+    id: 'rail-10',
+    edition: '10 / ARCHIVE',
+    title: 'Sculpted Minimalist Gala Gown',
+    category: 'Haute Gown',
+    image: '/images/094da629-9762-47ae-ab65-206d042cc68c.png',
+    price: 21000,
+    originalPrice: 25000,
+    fabric: 'Duchess Silk Satin',
+    weave: 'Laser Tailored Darting',
+    hours: '175 Hours',
+    silhouette: 'Hourglass Monolith',
+    tag: 'Salon Exclusive'
   }
 ];
 
@@ -114,11 +170,12 @@ const EditorialCollectionRail = ({ onProductClick, onAddToCart }) => {
     }
   };
 
-  // Self-scrolling Carousel effect
+  // Self-scrolling Carousel effect (desktop only where it's a horizontal rail)
   useEffect(() => {
     if (isInteracting) return;
 
     const interval = setInterval(() => {
+      if (typeof window !== 'undefined' && window.innerWidth <= 768) return;
       if (railRef.current) {
         const { scrollLeft, scrollWidth, clientWidth } = railRef.current;
         // If near end, loop smoothly back to beginning

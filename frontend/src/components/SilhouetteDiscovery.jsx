@@ -1,30 +1,22 @@
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Compass, Sparkles, SlidersHorizontal, Eye, ShoppingBag, Check } from 'lucide-react';
+import { Compass, Eye, ShoppingBag, Check } from 'lucide-react';
 import './SilhouetteDiscovery.css';
 
 const SILHOUETTE_OPTIONS = [
-  { id: 'all', label: 'All Silhouettes', desc: 'Complete Architectural Archive' },
-  { id: 'column', label: 'Sculpted Column', desc: 'Monolithic, vertical floor-grazing line' },
-  { id: 'pleat', label: 'Architectural Pleat', desc: 'Kinetic micro-folds engineered for motion' },
-  { id: 'cape', label: 'Cape & Flute', desc: 'Dramatic asymmetric shoulder sweep' },
-  { id: 'minimalist', label: 'Minimalist Sheath', desc: 'Unembellished precision razor contour' }
+  { id: 'all', label: 'All Silhouettes' },
+  { id: 'column', label: 'Sculpted Column' },
+  { id: 'pleat', label: 'Architectural Pleat' },
+  { id: 'cape', label: 'Cape & Flute' },
+  { id: 'minimalist', label: 'Minimalist Sheath' }
 ];
 
 const ATMOSPHERE_OPTIONS = [
-  { id: 'all', label: 'All Atmospheres' },
-  { id: 'gala', label: 'Nocturne Gala (Evening)' },
-  { id: 'reception', label: 'Editorial Reception' },
-  { id: 'trousseau', label: 'Bespoke Trousseau' },
-  { id: 'solar', label: 'Solar Ceremony' }
-];
-
-const TEXTILE_OPTIONS = [
-  { id: 'all', label: 'All Textiles' },
-  { id: 'silk', label: 'Raw Mulberry Silk' },
-  { id: 'organza', label: 'Tissue Organza' },
-  { id: 'brocade', label: 'Zari Brocade Weft' },
-  { id: 'georgette', label: 'Micro-Pleated Georgette' }
+  { id: 'all', label: 'All Occasions' },
+  { id: 'gala', label: 'Nocturne Gala' },
+  { id: 'reception', label: 'Reception' },
+  { id: 'trousseau', label: 'Trousseau' },
+  { id: 'solar', label: 'Ceremony' }
 ];
 
 const SILHOUETTE_CATALOG = [
@@ -35,7 +27,7 @@ const SILHOUETTE_CATALOG = [
     silhouette: 'column',
     atmosphere: 'gala',
     textile: 'silk',
-    image: '/images/i1.png',
+    image: '/images/hero_slide_1.jpg',
     price: 14800,
     originalPrice: 18500,
     specs: {
@@ -56,7 +48,7 @@ const SILHOUETTE_CATALOG = [
     price: 13600,
     originalPrice: 16000,
     specs: {
-      profile: 'Ethereal Semi-Translucent Flute',
+      profile: 'Semi-Translucent Flute',
       composition: 'Pure Mulberry Tissue Silk',
       drapingHours: '110 Hours Micro-Zari',
       hardware: 'Hand-Stitched Micro Zardozi'
@@ -73,7 +65,7 @@ const SILHOUETTE_CATALOG = [
     price: 13050,
     originalPrice: 14500,
     specs: {
-      profile: 'Two-Piece Architectural Structure',
+      profile: 'Two-Piece Structure',
       composition: 'Silk Chanderi with Metal Weft',
       drapingHours: '95 Hours Bespoke Loom',
       hardware: 'Restrained Champagne Buttons'
@@ -90,7 +82,7 @@ const SILHOUETTE_CATALOG = [
     price: 24500,
     originalPrice: 28000,
     specs: {
-      profile: 'Volumetric Fluted Architecture',
+      profile: 'Volumetric Fluted Train',
       composition: 'Raw Mikado with Heavy Zardozi',
       drapingHours: '220 Hours Atelier Stitch',
       hardware: 'Pure Silver Thread Crystals'
@@ -124,7 +116,7 @@ const SILHOUETTE_CATALOG = [
     price: 10800,
     originalPrice: 12500,
     specs: {
-      profile: 'Subtle Column with Structured Sleeve',
+      profile: 'Structured Sleeve Column',
       composition: 'Silk Organza Dual-Layer',
       drapingHours: '75 Hours Master Tailoring',
       hardware: 'Champagne Minimal Piping'
@@ -159,7 +151,7 @@ const SILHOUETTE_CATALOG = [
     originalPrice: 19500,
     specs: {
       profile: 'Military-Precise Monolithic Line',
-      composition: 'Pure Silk Brocade with Raw Weave',
+      composition: 'Pure Silk Brocade Raw Weave',
       drapingHours: '130 Hours Pattern Draft',
       hardware: 'Icy Silver Handcrafted Studs'
     }
@@ -169,129 +161,70 @@ const SILHOUETTE_CATALOG = [
 const SilhouetteDiscovery = ({ onProductClick, onAddToCart }) => {
   const [selectedSilhouette, setSelectedSilhouette] = useState('all');
   const [selectedAtmosphere, setSelectedAtmosphere] = useState('all');
-  const [selectedTextile, setSelectedTextile] = useState('all');
 
   const filteredPieces = useMemo(() => {
     return SILHOUETTE_CATALOG.filter((item) => {
       const matchSil = selectedSilhouette === 'all' || item.silhouette === selectedSilhouette;
       const matchAtm = selectedAtmosphere === 'all' || item.atmosphere === selectedAtmosphere;
-      const matchTex = selectedTextile === 'all' || item.textile === selectedTextile;
-      return matchSil && matchAtm && matchTex;
+      return matchSil && matchAtm;
     });
-  }, [selectedSilhouette, selectedAtmosphere, selectedTextile]);
+  }, [selectedSilhouette, selectedAtmosphere]);
 
   const resetFilters = () => {
     setSelectedSilhouette('all');
     setSelectedAtmosphere('all');
-    setSelectedTextile('all');
   };
 
   return (
     <section className="silhouette-discovery-section" id="silhouettes">
       <div className="couture-container">
-        {/* Section Intro */}
+        {/* Section Intro - Compact & Elegant */}
         <div className="silhouette-intro-row">
-          <div>
-            <div className="maison-label">Interactive Atelier Experience</div>
+          <div className="intro-left-block">
+            <span className="maison-label">Interactive Atelier Experience</span>
             <h2 className="silhouette-title">Find Your Silhouette</h2>
             <p className="silhouette-description">
-              Filter through the architectural codes of the house. Specify your desired structural line, event atmosphere, and textile density to reveal customized couture pieces instantly.
+              Filter through the architectural codes of the house. Specify your desired structural line and event atmosphere.
             </p>
           </div>
 
           <div className="discovery-stats-pill">
             <span className="stats-dot" />
-            <span className="stats-text">{filteredPieces.length} ARCHIVAL SILHOUETTES MATCHED</span>
+            <span className="stats-text">{filteredPieces.length} PIECES</span>
           </div>
         </div>
 
-        {/* Facet Selectors */}
-        <div className="discovery-matrix-panel">
-          {/* Dimension 1: Silhouette Form */}
-          <div className="matrix-dimension-group">
-            <div className="dimension-label-header">
-              <Compass size={15} />
-              <span>01. STRUCTURAL GEOMETRY</span>
-            </div>
-            <div className="silhouette-pill-grid">
-              {SILHOUETTE_OPTIONS.map((opt) => (
-                <button
-                  key={opt.id}
-                  className={`silhouette-filter-pill ${selectedSilhouette === opt.id ? 'active-pill' : ''}`}
-                  onClick={() => setSelectedSilhouette(opt.id)}
-                  aria-pressed={selectedSilhouette === opt.id}
-                >
-                  <span className="pill-name">{opt.label}</span>
-                  {selectedSilhouette === opt.id && <Check size={14} className="pill-check" />}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Dimension 2 & 3 Combined Row */}
-          <div className="matrix-secondary-row">
-            {/* Atmosphere */}
-            <div className="secondary-facet-group">
-              <div className="dimension-label-header">
-                <SlidersHorizontal size={14} />
-                <span>02. EVENT ATMOSPHERE</span>
-              </div>
-              <div className="secondary-pill-cluster">
-                {ATMOSPHERE_OPTIONS.map((atm) => (
-                  <button
-                    key={atm.id}
-                    className={`micro-pill ${selectedAtmosphere === atm.id ? 'micro-active' : ''}`}
-                    onClick={() => setSelectedAtmosphere(atm.id)}
-                  >
-                    {atm.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Textile */}
-            <div className="secondary-facet-group">
-              <div className="dimension-label-header">
-                <Sparkles size={14} />
-                <span>03. TEXTILE DENSITY</span>
-              </div>
-              <div className="secondary-pill-cluster">
-                {TEXTILE_OPTIONS.map((tex) => (
-                  <button
-                    key={tex.id}
-                    className={`micro-pill ${selectedTextile === tex.id ? 'micro-active' : ''}`}
-                    onClick={() => setSelectedTextile(tex.id)}
-                  >
-                    {tex.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Active Filter Summary Bar */}
-          {(selectedSilhouette !== 'all' || selectedAtmosphere !== 'all' || selectedTextile !== 'all') && (
-            <div className="filter-active-bar">
-              <div className="active-tags-flex">
-                <span className="filter-summary-text">Active Filter Parameters:</span>
-                {selectedSilhouette !== 'all' && (
-                  <span className="tag-chip">Silhouette: {SILHOUETTE_OPTIONS.find(o => o.id === selectedSilhouette)?.label}</span>
-                )}
-                {selectedAtmosphere !== 'all' && (
-                  <span className="tag-chip">Atmosphere: {ATMOSPHERE_OPTIONS.find(o => o.id === selectedAtmosphere)?.label}</span>
-                )}
-                {selectedTextile !== 'all' && (
-                  <span className="tag-chip">Textile: {TEXTILE_OPTIONS.find(o => o.id === selectedTextile)?.label}</span>
-                )}
-              </div>
-              <button onClick={resetFilters} className="clear-filters-btn">
-                RESET TO ALL
+        {/* Sleek, Cool, Compact Single-Row Filter System */}
+        <div className="chic-silhouette-filter-bar">
+          <div className="silhouette-pill-track" role="tablist" aria-label="Filter silhouettes">
+            {SILHOUETTE_OPTIONS.map((opt) => (
+              <button
+                key={opt.id}
+                role="tab"
+                className={`silhouette-pill-chip ${selectedSilhouette === opt.id ? 'active-chip' : ''}`}
+                onClick={() => setSelectedSilhouette(opt.id)}
+                aria-selected={selectedSilhouette === opt.id}
+              >
+                <span>{opt.label}</span>
+                {selectedSilhouette === opt.id && <Check size={13} className="pill-check-icon" />}
               </button>
-            </div>
-          )}
+            ))}
+          </div>
+
+          <div className="atmosphere-filter-track">
+            {ATMOSPHERE_OPTIONS.map((atm) => (
+              <button
+                key={atm.id}
+                className={`atmosphere-sub-chip ${selectedAtmosphere === atm.id ? 'active-sub-chip' : ''}`}
+                onClick={() => setSelectedAtmosphere(atm.id)}
+              >
+                {atm.label}
+              </button>
+            ))}
+          </div>
         </div>
 
-        {/* Dynamic Display Grid */}
+        {/* Dynamic Display Grid - Compact, Cool, 4-Col Desktop / 2-Col Mobile (12px gap) */}
         <AnimatePresence mode="popLayout">
           {filteredPieces.length > 0 ? (
             <motion.div
@@ -300,17 +233,17 @@ const SilhouetteDiscovery = ({ onProductClick, onAddToCart }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.4 }}
+              transition={{ duration: 0.3 }}
             >
               {filteredPieces.map((item) => (
                 <motion.div
                   key={item.id}
                   className="silhouette-card"
                   layout
-                  initial={{ opacity: 0, scale: 0.95 }}
+                  initial={{ opacity: 0, scale: 0.96 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.35 }}
+                  exit={{ opacity: 0, scale: 0.96 }}
+                  transition={{ duration: 0.25 }}
                 >
                   <div className="card-visual-wrapper" onClick={() => onProductClick?.(item)}>
                     <img
@@ -332,7 +265,7 @@ const SilhouetteDiscovery = ({ onProductClick, onAddToCart }) => {
                           onProductClick?.(item);
                         }}
                       >
-                        <Eye size={15} />
+                        <Eye size={14} />
                         <span>INSPECT</span>
                       </button>
                     </div>
@@ -343,21 +276,8 @@ const SilhouetteDiscovery = ({ onProductClick, onAddToCart }) => {
                     <h3 className="card-item-title" onClick={() => onProductClick?.(item)}>
                       {item.title}
                     </h3>
-
-                    {/* Structural Specs Blueprint */}
-                    <div className="card-specs-list">
-                      <div className="spec-item">
-                        <span className="s-label">COMPOSITION:</span>
-                        <span className="s-val">{item.specs.composition}</span>
-                      </div>
-                      <div className="spec-item">
-                        <span className="s-label">LOOM CREATION:</span>
-                        <span className="s-val">{item.specs.drapingHours}</span>
-                      </div>
-                      <div className="spec-item">
-                        <span className="s-label">DETAIL:</span>
-                        <span className="s-val">{item.specs.hardware}</span>
-                      </div>
+                    <div className="card-silhouette-subtitle">
+                      {item.specs.composition}
                     </div>
 
                     <div className="card-footer-action">
@@ -374,7 +294,7 @@ const SilhouetteDiscovery = ({ onProductClick, onAddToCart }) => {
                         aria-label={`Commission or add ${item.title} to bag`}
                       >
                         <ShoppingBag size={14} />
-                        <span>COMMISSION PIECE</span>
+                        <span>COMMISSION</span>
                       </button>
                     </div>
                   </div>
@@ -388,11 +308,11 @@ const SilhouetteDiscovery = ({ onProductClick, onAddToCart }) => {
               animate={{ opacity: 1 }}
             >
               <div className="empty-box-icon">
-                <Compass size={32} />
+                <Compass size={28} />
               </div>
               <h3 className="empty-title">NO MATCHING ARCHIVAL FORM FOUND</h3>
               <p className="empty-text">
-                Your combination of structural line and textile density is currently in commission. Reset your filters or contact the private atelier for bespoke formulation.
+                Your combination of structural line and occasion is currently in commission.
               </p>
               <button onClick={resetFilters} className="btn-couture-primary">
                 RESET FILTERS
