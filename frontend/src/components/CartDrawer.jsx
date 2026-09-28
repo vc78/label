@@ -2,14 +2,13 @@ import { useState, useEffect, useRef, useMemo } from 'react';
 import emailjs from '@emailjs/browser';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
-import { X, Plus, Minus, Trash2, ShoppingBag, ArrowLeft, Copy, Check, MapPin, AlertCircle, QrCode, CreditCard, FileText, Download, Share2, MessageCircle, Tag, Sparkles, CheckCircle2 } from 'lucide-react';
+import { X, Plus, Minus, Trash2, ShoppingBag, ArrowLeft, Copy, Check, MapPin, AlertCircle, QrCode, CreditCard, FileText, Download, MessageCircle, Tag, CheckCircle2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { handleRazorpayPayment, initializeRazorpay } from '../utils/razorpayService';
 import { createInvoiceOrder, generateInvoicePdf, downloadInvoicePdf, shareInvoicePdf, openWhatsAppWithOrder } from '../utils/invoiceService';
 import './CartDrawer.css';
 
 const BRAND_NAME = 'LABEL by SAHITHI NANDAN';
-const WHATSAPP_NUMBER = '919000164752';
 const UPI_ID = 'labelbysahithi@upi';
 const DELIVERY_CHARGE = 0;
 
@@ -149,6 +148,7 @@ const CartDrawer = ({ isOpen, onClose, externalCoupon, onClearExternalCoupon }) 
       setCouponCode(externalCoupon);
       executeApplyCoupon(externalCoupon);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [externalCoupon]);
 
   // Pre-fill form when user changes or modal opens

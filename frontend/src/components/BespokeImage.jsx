@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Diamond } from 'lucide-react';
+import { useState } from 'react';
 import heroImg from '../assets/hero.png';
 import './BespokeImage.css';
 

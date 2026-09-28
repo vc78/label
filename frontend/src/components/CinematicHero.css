@@ -1,0 +1,492 @@
+/* ==========================================================================
+   COLD COUTURE CINEMATIC HERO & CAROUSEL
+   Pixel-Accurate Implementation to Match Reference Haute Couture Editorial
+   ========================================================================== */
+
+.cinematic-hero-section {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  overflow: hidden;
+  background-color: #FAFBFD;
+  display: flex;
+  align-items: center;
+}
+
+/* 1. CAROUSEL VIEWPORT & IMAGE STAGE */
+.hero-carousel-viewport {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-slide-frame {
+  position: absolute;
+  inset: -2%;
+  width: 104%;
+  height: 104%;
+  overflow: hidden;
+  will-change: transform, opacity;
+}
+
+.hero-slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+  filter: contrast(104%) brightness(99%);
+}
+
+/* Subtle Luminous Ambient Scrims */
+.hero-slide-luminous-scrim {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 35% 50%,
+    rgba(255, 255, 255, 0.35) 0%,
+    rgba(250, 251, 253, 0.15) 55%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.hero-top-vignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 140px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.82) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.hero-bottom-vignette {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 160px;
+  background: linear-gradient(0deg, rgba(250, 251, 253, 0.85) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+/* 2. FOREGROUND EDITORIAL CONTENT STAGE */
+.hero-content-stage {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  padding-top: clamp(6.5rem, 12vw, 9.5rem);
+  padding-bottom: clamp(6rem, 11vw, 8.5rem);
+  will-change: transform;
+}
+
+.hero-container-layout {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.hero-editorial-dossier {
+  max-width: 680px;
+  text-align: left;
+}
+
+/* TOP MONOGRAM TAG BADGE */
+.hero-monogram-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  padding: 0.45rem 1rem;
+  margin-bottom: clamp(1.2rem, 2.5vw, 1.8rem);
+  box-shadow: 0 4px 18px rgba(18, 22, 35, 0.04);
+}
+
+.hero-geo-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent-champagne);
+  box-shadow: 0 0 8px rgba(168, 136, 91, 0.7);
+}
+
+.hero-archive-text {
+  font-family: var(--font-mono);
+  font-size: clamp(0.68rem, 1.1vw, 0.75rem);
+  letter-spacing: 0.2em;
+  color: var(--text-pure);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* MONOLITHIC TITLE & SUBTITLE */
+.hero-monolith-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6.2vw, 5.2rem);
+  line-height: 1.04;
+  letter-spacing: 0.05em;
+  color: #121316;
+  font-weight: 500;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.hero-title-subscript {
+  display: block;
+  font-family: var(--font-editorial);
+  font-size: clamp(1.25rem, 2.6vw, 2.1rem);
+  line-height: 1.25;
+  letter-spacing: 0.16em;
+  color: var(--accent-champagne);
+  font-weight: 400;
+  font-style: italic;
+  margin-top: 0.45rem;
+  margin-bottom: clamp(1.1rem, 2vw, 1.6rem);
+}
+
+/* EDITORIAL MANIFESTO PARAGRAPH */
+.hero-editorial-manifesto {
+  font-family: var(--font-sans);
+  font-size: clamp(0.92rem, 1.25vw, 1.05rem);
+  color: #4A4D55;
+  line-height: 1.75;
+  max-width: 540px;
+  margin-bottom: clamp(1.75rem, 3.5vw, 2.4rem);
+  font-weight: 400;
+}
+
+/* ACTIONS CLUSTER (BUTTONS) */
+.hero-actions-cluster {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-couture-primary {
+  background: #101114;
+  color: #FAFBFD;
+  border: 1px solid #101114;
+  padding: 0.85rem 1.65rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 18px rgba(16, 17, 20, 0.18);
+}
+
+.btn-couture-primary:hover {
+  background: var(--accent-champagne);
+  border-color: var(--accent-champagne);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(168, 136, 91, 0.25);
+}
+
+.btn-couture-outline {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  color: #101114;
+  border: 1px solid rgba(16, 17, 20, 0.2);
+  padding: 0.85rem 1.65rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all var(--transition-fast);
+}
+
+.btn-couture-outline:hover {
+  background: #101114;
+  border-color: #101114;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.btn-icon {
+  color: var(--accent-champagne);
+}
+
+/* 3. INTERACTIVE CAROUSEL CHEVRON ARROWS */
+.hero-nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-hairline);
+  color: var(--text-pure);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 18px rgba(18, 22, 35, 0.06);
+}
+
+.cinematic-hero-section:hover .hero-nav-arrow {
+  opacity: 1;
+}
+
+.hero-prev-arrow {
+  left: 20px;
+}
+
+.hero-next-arrow {
+  right: 20px;
+}
+
+.hero-nav-arrow:hover {
+  background: #101114;
+  color: #FFFFFF;
+  border-color: #101114;
+  transform: translateY(-50%) scale(1.08);
+}
+
+/* 4. CAROUSEL PAGINATION TRACKS (BOTTOM CENTER-LEFT) */
+.hero-carousel-pagination {
+  position: absolute;
+  bottom: 28px;
+  left: var(--page-gutter);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  z-index: 10;
+}
+
+.pagination-item {
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px 0;
+  opacity: 0.55;
+  transition: opacity 0.3s ease;
+}
+
+.pagination-item:hover,
+.pagination-item.pagination-active {
+  opacity: 1;
+}
+
+.pagination-num {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  color: var(--text-pure);
+  text-align: left;
+}
+
+.pagination-item.pagination-active .pagination-num {
+  color: var(--accent-champagne);
+  font-weight: 600;
+}
+
+.pagination-bar-track {
+  width: 42px;
+  height: 2px;
+  background: rgba(16, 17, 20, 0.15);
+  border-radius: 1px;
+  overflow: hidden;
+  position: relative;
+}
+
+.pagination-bar-fill {
+  width: 0;
+  height: 100%;
+  background: var(--accent-champagne);
+  transition: width 0.3s ease;
+}
+
+.pagination-item.pagination-active .pagination-bar-fill {
+  width: 100%;
+}
+
+/* 5. MINIMALIST MOUSE SCROLL INDICATOR ON BOTTOM RIGHT (EXACT MATCH) */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 24px;
+  right: clamp(1.5rem, 4vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  z-index: 10;
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.hero-scroll-indicator:hover {
+  transform: translateY(2px);
+}
+
+.mouse-capsule {
+  width: 18px;
+  height: 28px;
+  border: 1.5px solid #222429;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.mouse-wheel-dot {
+  width: 3px;
+  height: 6px;
+  background-color: #222429;
+  border-radius: 2px;
+  animation: mouseWheel 1.8s infinite ease-in-out;
+}
+
+@keyframes mouseWheel {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  60% {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+
+.scroll-caption {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.24em;
+  color: #222429;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.scroll-hairline-down {
+  width: 1px;
+  height: 24px;
+  background: linear-gradient(180deg, #222429 0%, transparent 100%);
+  animation: hairlineDown 1.8s infinite ease-in-out;
+}
+
+@keyframes hairlineDown {
+  0%, 100% {
+    transform: scaleY(0.7);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+/* RESPONSIVE QA */
+@media (max-width: 1024px) {
+  .hero-nav-arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-slide-img {
+    object-position: 70% center;
+  }
+
+  .hero-content-stage {
+    padding-top: clamp(5.5rem, 14vw, 7.5rem);
+    padding-bottom: clamp(5rem, 12vw, 6.5rem);
+  }
+
+  .hero-editorial-dossier {
+    max-width: 100%;
+  }
+
+  /* Reposition pagination to center to avoid collision with bottom-left AI Stylist button */
+  .hero-carousel-pagination {
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    padding: 0.4rem 0.85rem;
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 20px rgba(18, 22, 35, 0.08);
+    gap: 0.85rem;
+  }
+
+  .hero-scroll-indicator {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-monolith-title {
+    font-size: clamp(2.2rem, 9vw, 3.2rem);
+  }
+
+  .hero-title-subscript {
+    font-size: clamp(1.1rem, 4.5vw, 1.45rem);
+  }
+
+  .hero-editorial-manifesto {
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .hero-actions-cluster {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+  }
+
+  .hero-actions-cluster .btn-couture-primary,
+  .hero-actions-cluster .btn-couture-outline {
+    width: 100%;
+    justify-content: center;
+    padding: 0.85rem 1.5rem;
+  }
+
+  .hero-carousel-pagination {
+    bottom: 18px;
+    padding: 0.3rem 0.65rem;
+    gap: 0.6rem;
+  }
+
+  .pagination-num {
+    font-size: 0.62rem;
+  }
+
+  .pagination-bar-track {
+    width: 24px;
+  }
+}

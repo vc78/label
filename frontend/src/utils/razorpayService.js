@@ -70,7 +70,7 @@ export const handleRazorpayPayment = async (options) => {
     });
 };
 
-export const generateRazorpayOrderId = async (amount, description, userDetails) => {
+export const generateRazorpayOrderId = async (_amount, _description, _userDetails) => {
     // In a real app, this would call your backend API
     // For now, we'll generate a mock order ID format
     // Backend API example:

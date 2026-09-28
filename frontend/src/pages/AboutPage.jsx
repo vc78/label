@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowLeft, Camera, MessageCircle, Sparkles, Award, Heart } from 'lucide-react';
+import { ArrowLeft, Camera, MessageCircle, Sparkles, Award } from 'lucide-react';
 import './AboutPage.css';
 
 const AboutPage = ({ onBack }) => {

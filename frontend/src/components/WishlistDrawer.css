@@ -1,13 +1,19 @@
+/* ==========================================================================
+   COLD COUTURE WISHLIST DRAWER — LUMINOUS EDITORIAL MAISON UI
+   Matches Main Page Design System: Porcelain White, Liquid Platinum, Champagne Accents
+   ========================================================================== */
+
 .wishlist-backdrop {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(18, 18, 18, 0.4);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(16, 17, 20, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   z-index: 2000;
+  transition: opacity 0.3s ease;
 }
 
 .wishlist-drawer {
@@ -15,21 +21,28 @@
   top: 0;
   right: 0;
   width: 100%;
-  max-width: 460px;
+  max-width: 470px;
   height: 100vh;
   display: flex;
   flex-direction: column;
   z-index: 2001;
-  color: var(--white);
-  box-shadow: -15px 0 40px rgba(0, 0, 0, 0.2);
+  color: var(--text-pure);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border-left: 1px solid var(--border-hairline);
+  box-shadow: -20px 0 60px rgba(18, 22, 35, 0.12);
 }
 
 .wishlist-header {
-  padding: 24px 28px;
+  padding: 22px 28px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-hairline);
+  flex-shrink: 0;
 }
 
 .wishlist-title-wrapper {
@@ -39,38 +52,41 @@
 }
 
 .wishlist-title-wrapper h3 {
-  font-size: 20px;
-  font-family: var(--font-sans);
-  font-weight: 400;
-  color: var(--white);
-  letter-spacing: 0.05em;
+  font-size: 1.1rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--text-pure);
+  letter-spacing: 0.18em;
   text-transform: uppercase;
+  margin: 0;
 }
 
 .filled-heart {
-  fill: var(--accent-gold);
+  fill: #e74c3c;
+  color: #e74c3c;
 }
 
 .gold-icon {
-  color: var(--accent-gold);
+  color: var(--accent-champagne);
 }
 
 .close-btn {
   background: transparent;
-  border: none;
-  color: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--border-hairline);
+  color: var(--text-graphite);
   cursor: pointer;
-  padding: 6px;
+  padding: 8px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: var(--transition-smooth);
+  transition: all var(--transition-fast);
 }
 
 .close-btn:hover {
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--white);
+  background: var(--text-pure);
+  color: #FFFFFF;
+  border-color: var(--text-pure);
 }
 
 .wishlist-body {
@@ -87,85 +103,99 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0 10px;
+  padding: 40px 10px;
 }
 
 .empty-heart-icon {
-  color: var(--accent-gold);
-  margin-bottom: 24px;
-  opacity: 0.8;
+  color: var(--accent-champagne);
+  margin-bottom: 20px;
+  opacity: 0.85;
 }
 
 .empty-title {
-  font-family: var(--font-serif);
-  font-size: 22px;
-  margin-bottom: 12px;
-  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  letter-spacing: 0.12em;
+  margin-bottom: 10px;
+  color: var(--text-pure);
 }
 
 .empty-subtitle {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 14px;
+  color: var(--text-muted);
+  font-size: 0.88rem;
   line-height: 1.6;
   max-width: 320px;
-  margin-bottom: 30px;
-  font-weight: 300;
+  margin-bottom: 28px;
+  font-weight: 400;
 }
 
 .shop-btn {
-  border-color: var(--accent-gold);
-  color: var(--accent-gold);
-  padding: 10px 24px;
-  font-size: 13px;
+  background: var(--text-pure);
+  color: #FAFBFD;
+  border: 1px solid var(--text-pure);
+  padding: 12px 28px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
 }
 
 .shop-btn:hover {
-  background: var(--accent-gold);
-  color: var(--primary-color);
+  background: var(--accent-champagne);
+  border-color: var(--accent-champagne);
+  color: #FFFFFF;
 }
 
 /* Wishlist Items */
 .wishlist-items-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 }
 
 .wishlist-item {
   display: flex;
-  gap: 18px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 16px;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--border-hairline);
+  padding: 14px;
   border-radius: 4px;
-  transition: var(--transition-smooth);
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
 }
 
 .wishlist-item:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(197, 168, 128, 0.2);
+  background: #FFFFFF;
+  border-color: var(--accent-champagne);
+  box-shadow: 0 8px 24px rgba(168, 136, 91, 0.08);
 }
 
 .wishlist-item-image {
-  width: 85px;
-  height: 110px;
+  width: 82px;
+  height: 108px;
   object-fit: cover;
   border-radius: 2px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-hairline);
+  background: #EAEFF6;
+  flex: 0 0 82px;
 }
 
 .wishlist-item-details {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .wishlist-item-name {
-  font-size: 15px;
+  font-size: 0.92rem;
   font-family: var(--font-sans);
-  font-weight: 400;
-  color: var(--white);
-  line-height: 1.4;
+  font-weight: 600;
+  color: var(--text-pure);
+  line-height: 1.35;
   margin-bottom: 4px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -174,18 +204,19 @@
 }
 
 .wishlist-item-category {
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.4);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--accent-champagne);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.16em;
   margin-bottom: 6px;
 }
 
 .wishlist-item-price {
-  font-family: var(--font-sans);
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--accent-gold);
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-pure);
   margin-bottom: 12px;
 }
 
@@ -200,103 +231,84 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  background: transparent;
-  border: 1px solid var(--accent-gold);
-  color: var(--accent-gold);
-  padding: 6px 12px;
+  background: var(--text-pure);
+  border: 1px solid var(--text-pure);
+  color: #FAFBFD;
+  padding: 8px 14px;
   border-radius: 2px;
-  font-family: var(--font-sans);
-  font-size: 11px;
-  font-weight: 500;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.14em;
   cursor: pointer;
-  transition: var(--transition-smooth);
+  transition: all var(--transition-fast);
 }
 
 .move-to-cart-btn:hover {
-  background: var(--accent-gold);
-  color: var(--primary-color);
+  background: var(--accent-champagne);
+  border-color: var(--accent-champagne);
+  color: #FFFFFF;
 }
 
 .remove-wishlist-btn {
   background: transparent;
   border: none;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--text-muted);
   cursor: pointer;
   padding: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: var(--transition-smooth);
+  transition: color var(--transition-fast);
 }
 
 .remove-wishlist-btn:hover {
-  color: #FF5A5F;
+  color: #e74c3c;
 }
 
 /* Wishlist Footer */
 .wishlist-footer {
   flex-shrink: 0;
-  padding: 18px 24px calc(18px + env(safe-area-inset-bottom, 0px));
-  border-top: 1px solid rgba(212, 175, 55, 0.18);
-  background: #141517;
+  padding: 18px 28px calc(18px + env(safe-area-inset-bottom, 0px));
+  border-top: 1px solid var(--border-hairline);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(20px);
   display: flex;
   flex-direction: column;
   gap: 10px;
   box-sizing: border-box;
   width: 100%;
+  box-shadow: 0 -8px 24px rgba(18, 22, 35, 0.04);
 }
 
 .whatsapp-consult-btn {
   width: 100%;
-  min-height: 50px;
+  min-height: 48px;
   background-color: #25D366;
   color: #ffffff !important;
   border: none;
   padding: 13px 18px;
-  font-size: 14.5px;
-  font-weight: 700;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
-  border-radius: 8px;
+  letter-spacing: 0.15em;
+  border-radius: 2px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   gap: 8px;
-  transition: var(--transition-premium);
-  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-  position: relative;
-  box-sizing: border-box;
-  white-space: normal;
-  word-break: break-word;
-  line-height: 1.35;
-  margin: 4px 0 0 0;
-}
-
-.whatsapp-consult-btn::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 8px;
-  box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
-  animation: pulse-green 2s infinite;
-  z-index: -1;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25);
+  margin-top: 4px;
 }
 
 .whatsapp-consult-btn:hover {
-  background-color: #20BA56;
+  background-color: #1eb857;
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-}
-
-.whatsapp-consult-btn:active {
-  transform: translateY(1px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
 }
 
 .whatsapp-icon {
@@ -307,24 +319,21 @@
   .wishlist-drawer {
     width: 100vw !important;
     max-width: 100vw !important;
-    height: 100vh;
-    height: 100dvh;
+    height: 94dvh;
+    border-radius: 16px 16px 0 0;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
   .wishlist-header {
-    padding: 14px 16px;
+    padding: 16px 18px;
   }
   .wishlist-body {
-    padding: 14px 16px;
+    padding: 16px;
   }
   .wishlist-footer {
-    padding: 14px 16px calc(16px + env(safe-area-inset-bottom, 0px));
-    background: #141517;
-    gap: 8px;
-  }
-  .wishlist-footer .whatsapp-consult-btn {
-    min-height: 48px;
-    padding: 12px 14px;
-    font-size: 13.5px;
+    padding: 16px 16px calc(16px + env(safe-area-inset-bottom, 0px));
   }
 }
 
@@ -332,17 +341,18 @@
 .back-btn {
   background: transparent;
   border: none;
-  color: var(--accent-gold);
+  color: var(--accent-champagne);
   cursor: pointer;
   padding: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: var(--transition-smooth);
+  transition: transform var(--transition-fast);
 }
 
 .back-btn:hover {
   transform: translateX(-4px);
+  color: var(--text-pure);
 }
 
 .consultation-form {
@@ -359,51 +369,52 @@
 }
 
 .consultation-form label {
-  font-family: var(--font-sans);
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.7);
-  letter-spacing: 0.05em;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-graphite);
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
 .consultation-form input,
 .consultation-form textarea {
-  padding: 12px 14px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  color: var(--white);
-  font-family: var(--font-sans);
-  font-size: 14px;
-  transition: var(--transition-smooth);
+  padding: 10px 14px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-hairline);
+  border-radius: 2px;
+  color: var(--text-pure);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  transition: border-color var(--transition-fast);
 }
 
 .consultation-form input:focus,
 .consultation-form textarea:focus {
   outline: none;
-  border-color: var(--accent-gold);
-  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent-champagne);
+  box-shadow: 0 0 0 2px rgba(168, 136, 91, 0.12);
 }
 
 .measurements-preview-box {
-  background: rgba(197, 168, 128, 0.08);
-  border: 1px solid rgba(197, 168, 128, 0.2);
+  background: rgba(240, 244, 250, 0.65);
+  border: 1px solid var(--border-hairline);
   padding: 14px;
   border-radius: 4px;
   margin-top: 10px;
 }
 
 .measurements-preview-box h5 {
-  font-family: var(--font-sans);
-  color: var(--accent-gold);
-  font-size: 13px;
+  font-family: var(--font-mono);
+  color: var(--accent-champagne);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
   margin-bottom: 6px;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
 }
 
 .measurements-preview-box p {
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.6);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-graphite);
   line-height: 1.5;
 }

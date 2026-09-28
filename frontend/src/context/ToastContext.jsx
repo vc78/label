@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useState, useCallback } from 'react';
+/* eslint-disable react-refresh/only-export-components */
+import { createContext, useContext, useState, useCallback } from 'react';
 import { CheckCircle, XCircle, AlertCircle, X } from 'lucide-react';
 import '../components/Toast.css';
 
@@ -9,6 +10,10 @@ export const useToast = () => useContext(ToastContext);
 export const ToastProvider = ({ children }) => {
   const [toasts, setToasts] = useState([]);
 
+  const removeToast = useCallback((id) => {
+    setToasts(prev => prev.filter(toast => toast.id !== id));
+  }, []);
+
   const addToast = useCallback((message, type = 'success', duration = 3000) => {
     const id = Date.now().toString();
     setToasts(prev => [...prev, { id, message, type }]);
@@ -18,11 +23,7 @@ export const ToastProvider = ({ children }) => {
         removeToast(id);
       }, duration);
     }
-  }, []);
-
-  const removeToast = useCallback((id) => {
-    setToasts(prev => prev.filter(toast => toast.id !== id));
-  }, []);
+  }, [removeToast]);
 
   return (
     <ToastContext.Provider value={{ addToast }}>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Sparkles } from 'lucide-react';
+import { X } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { products } from '../data/products';
 import './WelcomePopup.css';
@@ -48,7 +48,7 @@ const WelcomePopup = ({ onCartOpen, onProductClick }) => {
             <span className="welcome-tag">{product.tag || 'New Arrival'}</span>
           </div>
           <div className="welcome-text-side">
-            <p className="welcome-eyebrow">✨ Trending Now</p>
+            <p className="welcome-eyebrow">ARCHIVAL COMMISSION · LIMITED RUN</p>
             <h3 className="welcome-product-name">{product.name}</h3>
             <p className="welcome-subtitle">{product.fabric || 'Handcrafted luxury piece'}</p>
             <div className="welcome-price-row">

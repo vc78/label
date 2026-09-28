@@ -82,6 +82,7 @@ export const createInvoiceOrder = ({
         items: normalizedItems,
         subtotal,
         discount,
+        deliveryCharge,
         total: safeTotal,
         paymentMethod: safeText(paymentMethod, 'Online Payment'),
         paymentStatus: safeText(paymentStatus, 'SUCCESSFUL'),

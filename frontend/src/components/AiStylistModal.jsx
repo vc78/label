@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, X, Send, MessageCircle, Bot, User, RefreshCw, ShoppingBag, ArrowRight } from 'lucide-react';
+import { useState, useRef, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { Sparkles, X, Send, MessageCircle, Bot, User, ShoppingBag } from 'lucide-react';
 import { askGeminiStylist } from '../utils/gemini';
 import './AiStylistModal.css';
 
@@ -12,7 +12,7 @@ const QUICK_PROMPTS = [
   "📏 How Bespoke Sizing Works"
 ];
 
-const AiStylistModal = ({ isOpen, onClose, onNavigateToProduct, onNavigateToCollection }) => {
+const AiStylistModal = ({ isOpen, onClose, _onNavigateToProduct, onNavigateToCollection }) => {
   const [messages, setMessages] = useState([
     {
       id: 'welcome',
