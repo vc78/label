@@ -1,7 +1,7 @@
 // Gemini AI Service for LABEL by SAHITHI NANDAN
 import { products } from '../data/products';
 
-const GEMINI_API_KEY = '';
+const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY || '';
 
 const SYSTEM_PROMPT = `
 You are the elite "AI Haute Couture Stylist" for LABEL by SAHITHI NANDAN, a luxury Indian ethnic wear and bespoke bridal atelier founded by Sahithi Garlapati.
